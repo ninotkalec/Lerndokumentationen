@@ -23,9 +23,9 @@ nav {
     margin-left: 30px;
     position: fixed;
 }
-#alles {
+main {
     max-width: 1500px;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 h1 {
     margin: 50px 0 20px;

@@ -11,12 +11,12 @@ html {
 #haupt a{
     padding: 10px;
     color: white;
-    border: 5px solid;
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 30px;
     background-color: #337ab7;
     display: block;
+    margin-bottom: 10px;
 }
 nav {
     float: left;

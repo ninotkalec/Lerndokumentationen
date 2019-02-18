@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+#titel {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+}
+nav {
+    float: left;
+    margin-left: 30px;
+    position: fixed;
+}
+#alles {
+    max-width: 1500px;
+    margin: 30px auto;
+}
+h1 {
+    margin: 50px 0 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+h2 {
+    text-transform: uppercase;
+}
+#HTML {
+    color: rgb(75, 145, 255);
+}
+td img {
+    max-width: 200px;
+    height: auto;
+    margin: 20px 20px 20px 0;
+    border: none;
+}
+#eumgebung tr {
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+.bhtml {
+    max-width: 1000px;
+}
+#htmlelement p {
+    width: 165px;
+}
+#htmlelement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.col1_html {
+    color: rgb(75, 145, 255);
+    font-size: x-large;
+    width: 230px;
+    padding-left: 40px;
+}
+#kommentare {
+    color: rgb(0, 175, 0);
+}
+img {
+    max-width: 500px;
+    margin-bottom: 20px;
+    border: dashed;
+    display: block;
+}
+#li {
+    margin-top: 10px;
+}
+#vl {
+    padding: 2px;
+    border: dashed;
+    margin-right: 60px;
+}
+#vlt {
+    max-width: 200px;
+    height: auto;
+    margin: 20px 20px 20px 0;
+    border: dashed;
+}
+.abstand {
+    margin-top: 20px;
+}
+.col1_css {
+    color: rgb(255, 70, 70);
+    font-size: x-large;
+    width: 230px;
+    padding-left: 40px;
+}
+.wert {
+    font-size: 18px;
+}
+.fettlist {
+    font-weight: bold;
+}
+ul li {
+    font-weight: normal;
+    list-style: none;
+    margin: 10px 0 20px;
+}
+.links {
+    max-width: 500px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+#CSS {
+    color: rgb(255, 70, 70);
+}
+.col2 {
+    padding-left: 20px;
+    border-left: solid 1px black;
+}
+.Selektor {
+    color: rgb(240, 100, 0);
+}
+.Deklaration {
+    color: green;
+}
+.Eigenschaft {
+    color: rgb(255, 70, 70);
+}
+.Wert_cssregel {
+    color: orange;
+}
+th {
+    border-bottom: 1px solid;
+}
+#tselektoren td {
+    border-bottom: dashed 1px black;
+    width: 33%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.col1_sel {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(255, 70, 70);
+    padding-right: 10px;
+}
+.col2_sel {
+    padding-right: 10px;
+}
+.col3_sel b {
+    color: rgb(255, 70, 70);
+}
+#tselektoren {
+    width: 100%;
+}
+#tselektoren th {
+    text-align: left;
+    font-size: 19px;
+}
+.blackintable {
+    color: black;
+    font-weight: normal;
+}
+.withoutborder {
+    border: none;
+}
+@media (max-width: 2200px){
+    nav {
+        visibility: hidden;
+    }
+}

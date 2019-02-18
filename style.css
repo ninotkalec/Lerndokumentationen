@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+#haupt a{
+    padding: 10px;
+    color: black;
+    border: 5px solid;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+#haupt p {
+    margin-bottom: 20px;
+}
 html {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(250, 250, 250);

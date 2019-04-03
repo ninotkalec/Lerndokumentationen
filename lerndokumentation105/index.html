@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lerndokumentation 105</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <a href="https://ninotkalec.github.io/Lerndokumentationen/"><img src="img/home.png" alt="home" id="home" /></a>
+        <h1 id="titel">Lerndokumentation<br>105 – Datenbanken mit SQL bearbeiten</h1>
+        <div id="navdiv"></div>
+        <nav id="navbar">
+            <a href="#wasistsql">
+                <div id="firstdiv">Was ist SQL?</div>
+            </a>
+            <a href="#tabellenerklärt">
+                <div>Tabellen erklärt</div>
+            </a>
+            <a href="#datenbankerstellen">
+                <div>Datenbank erstellen</div>
+            </a>
+            <a href="#tabelleerstellen">
+                <div>Tabelle erstellen</div>
+            </a>
+            <a href="#modellieren">
+                <div>Modellieren</div>
+            </a>
+            <a href="#datentypen">
+                <div>Datentypen</div>
+            </a>
+            <a href="#insertinto">
+                <div>INSERT INTO</div>
+            </a>
+            <a href="#select">
+                <div>SELECT</div>
+            </a>
+            <a href="#update">
+                <div>UPDATE</div>
+            </a>
+            <a href="#delete">
+                <div>DELETE</div>
+            </a>
+            <a href="#alter">
+                <div>ALTER</div>
+            </a>
+            <a href="#drop">
+                <div>DROP</div>
+            </a>
+            <a href="#rechteverwaltung">
+                <div>Rechteverwaltung</div>
+            </a>
+            <a href="#join">
+                <div>JOIN</div>
+            </a>
+            <a href="#funktionen">
+                <div>Funktionen</div>
+            </a>
+            <a href="#glossar_title">
+                <div id="lastdiv">Glossar</div>
+            </a>
+        </nav>
+    </header>
+    <main id="main">
+        <h2 id="wasistsql">Was ist SQL?</h2>
+        <p>SQL steht für Structured Query Language und mit ihr können Daten aus einer Datenbank selektiert, eintragen,
+            aktualisiert und gelöscht werden. Zudem kann man mit SQL Datenbank-Tabellen erstellen, modifzieren und
+            löschen. Wenn du also eine Datenbank hast und die Datenbank benutzen möchtest, brauchst du SQL.</p>
+        <h2 id="tabellenerklärt">Tabellen erklärt</h2>
+        <p>Jede Datenbank hat mindestens 1 Tabelle, in der Regel aber mehr. In Tabellen, die im Datenbank-Jargon auch
+            Entitäten genannt werden, werden Daten gespeichert und
+            jede Tabelle gruppiert bestimmte Daten. So kann man zum Beispiel eine Tabelle “Kunden” haben, in der alle
+            Kunden-relevanten Daten gespeichert werden. Oder man hat eine Tabelle “Produkte”, in der alle Produkte +
+            ihre spezifischen Daten, wie Preis und Anzahl gespeichert werden.</p>
+        <h3>Tabellen-Normalisierung</h3>
+        <p>Ziel der Normalisierung ist eine redundanzfreie Datenspeicherung zu erstellen. Redundanzfrei bedeutet, dass
+            Daten entfernt werden können, ohne dass es zu Informationsverlusten kommt. Tabellen zu normalisieren ist am
+            Anfang nicht einfach, daher empfehle ich, die folgenden zwei Links erstmal durchzugehen:</p>
+        <ul>
+            <li><a href="http://www.tinohempel.de/info/info/datenbank/normalisierung.htm"
+                    target="_blank">Normalisierung</a> - super erklärt und übersichtlich anhand von schönen Beispielen
+            </li>
+            <li><a href="https://www.hdm-stuttgart.de/~riekert/lehre/db-kelz/chap4.htm" target="_blank"> Der Königsweg:
+                    Normalisierung</a> - Vollständige Erklärung, ebenfalls mit Beispielen</li>
+        </ul>
+        <h4>Attribute und Datensätze</h4>
+        <p>Jede Tabelle besteht aus einer Menge Spalten und Zeilen. Die Überschrift einer Spalte nennt man Attribut und
+            die Zeilen sind ein Datensatz. Spalten sind dabei die Wert-Gruppen, während Zeilen die eigentlichen Werte
+            beinhalten. Eine Kunden-Tabelle wird zum Beispiel folgende Attribute haben:</p>
+        <p>Name, Adresse, PLZ</p>
+        <p>Mit eingetragenen Werten sieht das ganze folgendermassen aus:</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+            <tr class="grey">
+                <td>Max Mustermann</td>
+                <td>Musterstrasse 5</td>
+                <td>8212</td>
+            </tr>
+            <tr>
+                <td>Manuel Rahm</td>
+                <td>Schmalzgasse 10</td>
+                <td>8215</td>
+            </tr>
+            <tr class="grey">
+                <td>Anna Bedecs</td>
+                <td>Musterstrasse 1</td>
+                <td>99999</td>
+            </tr>
+            <tr>
+                <td>Thomas Axen</td>
+                <td>Musterstrasse 2</td>
+                <td>99999</td>
+            </tr>
+        </table>
+        <h2 id="datenbankerstellen">Datenbank erstellen</h2>
+        <p class="code">mysql&gt; CREATE DATABASE dbKunden;<br>Query OK, 1 row affected (0.00 sec)</p>
+        <p>Sehen wir uns den Code genauer an: "CREATE" besagt, dass wir etwas erstellen möchten. "DATABASE" sagt mysql,
+            dass eine Datenbank erstellt werden will und "dbKunden" ist der Name der Datenbank. Dabei muss man auf die
+            Gross- und Kleinschreibung achten. Ausserdem will man ja, dass die Zeichen so dargestellt werden sollen, wie
+            man sie geschrieben hat. Den Zeichensatz einer Datenbank legt man folgendermassen beim Erstellen der
+            Datenbank fest:</p>
+        <p class="code">CREATE DATABASE <i>Datenbank</i> CHARACTER SET utf8 COLLATE utf8_general_ci</p>
+        <h2 id="tabelleerstellen">Tabelle erstellen</h2>
+        <p class="code">mysql&gt; CREATE TABLE tblKunden (id int primary key auto_increment, name varchar(50), adresse
+            varchar(50), plz smallint);<br>Query OK, 0 rows affected (0.01 sec)</p>
+        <p>Beim Erstellen einer Tabelle ist der Code ein bisschen komplizierter. Denn mysql erwartet nach dem Namen auch
+            noch die Attribute und den Datentyp dazu. Ausserdem ist meistens ein Primary Key erforderlich.</p>
+        <h3>Primary Key</h3>
+        <p>Der Primary Key ist ein uniquer Schlüssel, der jede Zeile einer Tabelle eindeutig identifiziert. Wenn man zum
+            Beispiel eine Tabelle “Kunden” hat, kann es vorkommen, dass zwei oder mehr Kunden den gleichen Namen und
+            Nachnamen haben. Anstatt nun die Kunden anhand ihrer Namen eindeutig zu identifizieren, gibt man jeder Zeile
+            eine eindeutige ID, den Primary Key. Dieser wird beim eintragen einer neuen Zeile automatisch gesetzt und
+            mittels auto_increment nach jedem Einfügen eines Datensatzes fortlaufend erhöht. Dadurch wird verhindert,
+            dass zweimal die gleiche ID vergeben wird.</p>
+        <h3>Foreign Key</h3>
+        <p>Der Foreign Key ist ein Schlüssel um zwei Tabellen miteinander zu verbinden. Deshalb heisst es auch
+            relationale Datenbank. Dieser Schlüssel bezieht sich auf den Primary Key einer anderen Tabelle.</p>
+        <h4>Foreign Key hinzufügen beim erstellen einer Tabelle:</h4>
+        <p class="code">CREATE TABLE <i>Tabelle</i> FOREIGN KEY (<i>Attribut</i>) REFERENCES
+            <i>TabelleMitPK</i>(<i>PrimaryKey</i>)</p>
+        <h4>Foreign Key hinzufügen, wenn Tabelle schon erstellt ist:</h4>
+        <p class="code">ALTER TABLE <i>Tabelle</i> ADD FOREIGN KEY (<i>Attribut</i>) REFERENCES
+            <i>TabelleMitPK</i>(<i>Primary Key</i>)</p>
+        <h4>Referentielle Integrität</h4>
+        <p>In folgendem Link wird erklärt was eine Referentielle Integrität ist und wie man diese betreffend Primary Key
+            und Foreign Key erreichen kann:</p>
+        <p><a href="https://www.ibm.com/support/knowledgecenter/de/SSGU8G_12.1.0/com.ibm.sqlt.doc/ids_sqt_255.htm"
+                target="_blank">Referentielle Integrität</a></p>
+        <h2 id="modellieren">Modellieren</h2>
+        <p>Beim Modellieren entwickelt man ein Datenmodell einer Tabelle. Dies soll einen ersten Eindruck verschaffen
+            und die Struktur der Datenbank festlegen. Sie sollten bei der Modellierung auch schon die Primary- und
+            Foreign-Keys angeben.</p>
+        <img src="img/modellieren.PNG" />
+        <h2 id="datentypen">Datentypen</h2>
+        <p>Ein Datentyp ist ein Attribut, das für das jeweilige Objekt angibt, welchen Typ von Daten ein Objekt
+            aufnehmen kann: Ganzzahlige Daten, Zeichendaten, Währungsdaten, Datums- und Uhrzeitdaten, binäre
+            Zeichenfolgen usw. In folgendem Link wird erklärt, welchen Datentyp man wo benutzen sollte, wie lange der
+            Inhalt eines Datentyps sein darf und wie man diese anwendet:</p>
+        <p><a href="https://www.w3schools.com/sql/sql_datatypes.asp" target="_blank">Datentypen W3Schools</a></p>
+        <h3>CHAR / VARCHAR</h3>
+        <p>Wichtig zu beachten bei den Datentypen ist, was der Unterschied zwischen CHAR und VARCHAR ist und wann man
+            was benutzen sollte. Bei VARCHAR ist es so, dass die Zeichenlänge stark variieren kann. Die Anzahl Bytes
+            passt sich der Länge des Strings an. Jedoch werden immer 2 Bytes hinzugefügt, um mittzuteilen wie lange der
+            String ist. CHAR ist nicht so flexibel. Zwar ist die Zeichenlänge auch variierbar, jedoch passt sich die
+            Anzahl Bytes nicht der Länge des Strings an. Das heisst der String wird immer so viel Speicherplatz
+            brauchen, wie man ihm als maximale Länge angegeben hat.</p>
+        <h2 id="insertinto">INSERT INTO - Daten einfügen</h2>
+        <p>Das INSERT INTO wird verwendet um einen Datensatz in eine Tabelle einzufügen. Dafür benutzt man folgende
+            Syntax:</p>
+        <p class="code">mysql&gt; INSERT INTO <i>Tabelle</i> VALUES (<i>ersteSpalteWert</i>, ...,
+            <i>letzteSpalteWert</i>)</p>
+        <p>Mit dieser Syntax werden Daten fortlaufend in alle Spalten eingefügt.</p>
+        <p>Mit folgender Syntax kann man selbst auswählen in welche Spalten welche Werte eingefügt werden sollen:
+        </p>
+        <p class="code">mysql&gt; INSERT INTO <i>Tabelle</i> (<i>Attribut</i>, <i>Attribut</i>) VALUES
+            (<i>Wert für die erstgenannte Spalte</i>, <i>Wert für die letztgenannte Spalte</i>)</p>
+        <p>Es sollte beachtet werden, dass Werte, die in eine Spalte mit einem String-Datentyp eingesetzt werden
+            wollen,
+            zwischen zwei Apostrophen stehen müssen. Ausserdem müssen auto-increment-Spalten mit NULL befüllt
+            werden. So
+            kann mysql diese automatisch befüllen.</p>
+        <h4>Beispiel</h4>
+        <p class="code">mysql&gt; INSERT INTO tblKunden VALUES (NULL, 'Nino Tkalec', 'Wagenhauserstrasse 13',
+            8260);<br>Query OK, 1 row affected (0.02 sec)</p>
+        <p>Um nachzuschauen, ob der Befehl funktioniert hat, führt man <i>SELECT * FROM tblKunden</i> aus.</p>
+        <p class="code">SELECT * FROM tblKunden;</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+        </table>
+        <p class="code">1 row in set (0.00 sec)</p>
+        <p>Um Daten in eine Tabelle einzusetzen, die von anderen Tabellen geholt werden, werden die beiden Befehle
+            INSERT INTO und SELECT miteinander kombiniert.</p>
+        <p class="code">INSERT INTO <i>Tabelle</i> SELECT <i>Attribut</i> FROM <i>Tabelle</i> WHERE ...</p>
+        <h2 id="select">SELECT - Daten auselesen</h2>
+        <p>SELECT wird verwendet, um Daten aus Tabellen auszulesen. Zu einem Korrekten SELECT-Statement gehören
+            verschiedene Schlüsselwörter, welche in der richtigen Reihenfolge angewendet werden müssen. Im folgenden
+            ist
+            die Syntax eines korrekten SELECT-Statements:</p>
+        <p class="code">SELECT <i>Attribut</i> FROM <i>Tabelle</i> WHERE <i>Attribut=Bedingung</i> OR/AND GROUP BY
+            <i>Attribut</i> HAVING <i>Attribut=Bedingung</i> ORDER BY <i>Attribut</i>;</p>
+        <p>Um alle Spalten einer Tabelle anzeigenzulassen, kann stattdessen * auf der Position des Attributs
+            geschrieben
+            werden.</p>
+        <h3>Where - Auswahl eingrenzen</h3>
+        <p>Mit WHERE kann man das Ergebnis einer Selektion begrenzen.</p>
+        <h4>WHERE Syntax</h4>
+        <p class="code">SELECT * FROM <i>Tabelle</i> WHERE <i>Attribut=Bedingung</i></p>
+        <p>Als Beispiel dient die Kundentabelle:</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+            <tr class="grey">
+                <td>Max Mustermann</td>
+                <td>Musterstrasse 5</td>
+                <td>8212</td>
+            </tr>
+            <tr>
+                <td>Manuel Rahm</td>
+                <td>Schmalzgasse 10</td>
+                <td>8215</td>
+            </tr>
+            <tr class="grey">
+                <td>Anna Bedecs</td>
+                <td>Musterstrasse 1</td>
+                <td>99999</td>
+            </tr>
+            <tr>
+                <td>Thomas Axen</td>
+                <td>Musterstrasse 2</td>
+                <td>99999</td>
+            </tr>
+        </table>
+        <p class="code">mysql&gt; SELECT name FROM tblKunden WHERE addresse='Wagenhauserstrasse 13';</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+            </tr>
+        </table>
+        <p class="code">1 row in set (0.00 sec)</p>
+        <p>Wenn man keinen bestimmten Datensatz selektieren möchte, sondern alle deren Name mit "M" beginnt, kann
+            man
+            das
+            Schlüsselwort LIKE mit einer Wildcard (%) verwenden.</p>
+        <p class="code">mysql&gt; SELECT * FROM tblKunden WHERE name LIKE 'M%';</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Max Mustermann</td>
+                <td>Musterstrasse 5</td>
+                <td>8212</td>
+            </tr>
+            <tr class="grey">
+                <td>Manuel Rahm</td>
+                <td>Schmalzgasse 10</td>
+                <td>8215</td>
+            </tr>
+        </table>
+        <p class="code">2 rows in set (0.00 sec)</p>
+        <h3>Unterabfragen</h3>
+        <p>Mit Unterabfragen kann man Daten aus Tabellen selektieren, die an eine Bedingung einer anderer Tabelle
+            geknüpft sind:</p>
+        <p class="code">SELECT <i>Attribut</i> FROM <i>Tabelle</i> WHERE SELECT ...</p>
+        <h2 id="update">UPDATE - Daten verändern</h2>
+        <p>Datensätze können mit UPDATE aktualisiert werden. Dazu sollte immer eine Einschränkung mit WHERE
+            übermittelt
+            werden. Nachfolgend ein Beispiel mit der Tabelle tblKunden:</p>
+        <p class="code">mysql&gt; UPDATE tblKunden SET adresse='Updatestrasse 1' where name='Max
+            Mustermann';<br>Query
+            OK, 1 row affected (0.02 sec)<br>Rows matched: 1 Changed: 1 Warnings: 0</p>
+        <h4>Ergebnis</h4>
+        <p>Wenn wir jetzt das Ergebnis anschauen, sehen wir, dass Max Mustermann nun in der Updatestrasse 1 lebt.
+        </p>
+        <p class="code">mysql&gt; SELECT * FROM tblKunden;</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+            <tr class="marked">
+                <td>Max Mustermann</td>
+                <td>Updatestrasse 1</td>
+                <td>8212</td>
+            </tr>
+            <tr>
+                <td>Manuel Rahm</td>
+                <td>Schmalzgasse 10</td>
+                <td>8215</td>
+            </tr>
+            <tr class="grey">
+                <td>Anna Bedecs</td>
+                <td>Musterstrasse 1</td>
+                <td>99999</td>
+            </tr>
+            <tr>
+                <td>Thomas Axen</td>
+                <td>Musterstrasse 2</td>
+                <td>99999</td>
+            </tr>
+        </table>
+        <p>Anders als Herr Mustermann ist Frau Bedecs gleich in eine andere Stadt gezogen. Um jetzt ihre Adresse und
+            Postleitzahl gleichzeitig zu ändern, benutzen wir folgenden Befehl:</p>
+        <p class="code">mysql&gt; UPDATE tblKunden SET adresse='Updatestrasse 2', plz=8220 where name='Anna
+            Bedecs';<br>Query OK, 1 row affected (0.02 sec)<br>Rows matched: 1 Changed: 1 Warnings: 0</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+            <tr class="grey">
+                <td>Max Mustermann</td>
+                <td>Updatestrasse 1</td>
+                <td>8212</td>
+            </tr>
+            <tr>
+                <td>Manuel Rahm</td>
+                <td>Schmalzgasse 10</td>
+                <td>8215</td>
+            </tr>
+            <tr class="marked">
+                <td>Anna Bedecs</td>
+                <td>Updatestrasse 2</td>
+                <td>8220</td>
+            </tr>
+            <tr>
+                <td>Thomas Axen</td>
+                <td>Musterstrasse 2</td>
+                <td>99999</td>
+            </tr>
+        </table>
+        <h2 id="delete">DELETE - Löschen von Datensätzen</h2>
+        <p>Mit DELETE kann man Einträge aus der Datenbank löschen.</p>
+        <h4>DELETE Syntax</h4>
+        <p class="code">DELETE FROM <i>Tabelle</i> WHERE <i>Attribut=Bedingung</i></p>
+        <p>Nun wollen wir den Kunden Manuel Rahm löschen:</p>
+        <p class="code">mysql&gt; DELETE FROM tblKunden WHERE name='Manuel Rahm';<br>Query OK, 1 row affected (0.00
+            sec)
+        </p>
+        <p>Mittels DELETE kann man beliebige Einträge aus einer Tabelle löschen, doch vorsicht: Wenn man die
+            WHERE-Bedingung nicht setzt, werden alle Einträge innerhalb der Tabelle gelöscht:</p>
+        <p class="code">DELETE FROM <i>Tabelle</i></p>
+        <p>Wenn wir nun nachschauen, sehen wir, dass Manuel Rahm aus der Kundentabelle verschwunden ist:</p>
+        <p class="code">mysql&gt; SELECT * FROM tblKunden;</p>
+        <table class="sql">
+            <tr>
+                <th>name</th>
+                <th>adresse</th>
+                <th>plz</th>
+            </tr>
+            <tr>
+                <td>Nino Tkalec</td>
+                <td>Wagenhauserstrasse 13</td>
+                <td>8260</td>
+            </tr>
+            <tr class="grey">
+                <td>Max Mustermann</td>
+                <td>Updatestrasse 1</td>
+                <td>8212</td>
+            </tr>
+            <tr>
+                <td>Anna Bedecs</td>
+                <td>Updatestrasse 2</td>
+                <td>8220</td>
+            </tr>
+            <tr class="grey">
+                <td>Thomas Axen</td>
+                <td>Musterstrasse 2</td>
+                <td>99999</td>
+            </tr>
+        </table>
+        <p class="code">4 rows in set (0.00 sec)</p>
+        <h4>Mehrere Datensätze löschen:</h4>
+        <p class="code">DELETE FROM <i>Tabelle</i> WHERE <i>Attribut</i> IN (<i>Wert1, Wert2, Wert3</i>)</p>
+        <h2 id="alter">ALTER - Tabellen ändern</h2>
+        <p>MySQL-Tabellen haben die Eigenheit, dass diese als Datei auf Betriebssystemebene erstellt und verwaltet
+            werden. Damit später keine Namens-Konflikte auf anderen Betriebssystemen entstehen, empfiehlt es sich,
+            die
+            Tabellen mit Kleinbuchstaben zu verwalten.</p>
+        <p>Um Tabellen zu verändern, verwenden wir dazu ALTER TABLE. Nachfolgend benennen wir die Tabelle
+            'tblKunden' in
+            'tblkunden' um:</p>
+        <p class="code">mysql&gt; ALTER TABLE tblKunden RENAME tblkunden;<br>Query OK, 0 rows affected (0.01 sec)
+        </p>
+        <p>Nun merken wir, dass wir noch eine Spalte für die E-Mail-Adressen der Kunden brauchen, damit wir sie
+            kontaktieren können.</p>
+        <p class="code">mysql&gt; ALTER TABLE tblkunden add e_mail varchar(50);<br>Query OK, 0 rows affected (0.05
+            sec)<br>Records: 0 Duplicates: 0 Warnings: 0</p>
+        <p>Für die Namen der Kunden haben wir zu wenige Zeichen eingeplant, deshalb wollen wir die maximale
+            Füllmenge auf 100 Bytes vergrössern:</p>
+        <p class="code">mysql&gt; ALTER TABLE tblkunden change name name varchar(100);<br>Query OK, 0 rows affected
+            (0.01 sec)<br>Records: 0 Duplicates: 0 Warnings: 0</p>
+        <p>Nun können wir den Aufbau der Tabelle mit DESCRIBE <i>Tabelle</i> begutachten:</p>
+        <p class="code">mysql&gt; DESCRIBE tblkunden;</p>
+        <table class="sql">
+            <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Null</th>
+                <th>Key</th>
+                <th>Default</th>
+                <th>Extra</th>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>int(11)</td>
+                <td>NO</td>
+                <td>PRI</td>
+                <td>NULL</td>
+                <td>auto_increment</td>
+            </tr>
+            <tr class="grey">
+                <td>name</td>
+                <td>varchar(100)</td>
+                <td>YES</td>
+                <td></td>
+                <td>NULL</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>adresse</td>
+                <td>varchar(50)</td>
+                <td>YES</td>
+                <td></td>
+                <td>NULL</td>
+                <td></td>
+            </tr>
+            <tr class="grey">
+                <td>plz</td>
+                <td>smallint(6)</td>
+                <td>YES</td>
+                <td></td>
+                <td>NULL</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>e_mail</td>
+                <td>varchar(50)</td>
+                <td>YES</td>
+                <td></td>
+                <td>NULL</td>
+                <td></td>
+            </tr>
+        </table>
+        <h2 id="drop">DROP - Tabellen löschen</h2>
+        <p>Das DROP TABLE-Statement wird gebraucht um eine Tabelle komplett zu löschen, also nicht nur den Inhalt.
+        </p>
+        <h4>Syntax</h4>
+        <p class="code">DROP TABLE <i>Tabelle</i></p>
+        <p>Ausserdem kann man DROP auch mit ALTER TABLE kombinieren, um eine Spalte zu löschen:</p>
+        <p><b>Achtung!!</b> Kann nicht rückgängig gemacht werden.</p>
+        <p class="code">ALTER TABLE <i>Tabelle</i> DROP <i>Attribut</i></p>
+        <h2 id="rechteverwaltung">Rechteverwaltung</h2>
+        <p>Wenn wir z.B. in einem Warenlager arbeiten, wollen wir nicht, dass ein Mitarbeiter aus der
+            Marketing-Abteilung die Datenbanken des Warenlagers verändern kann. Dafür brauchen wir die
+            Rechteverwaltung
+            von MySQL.</p>
+        <h3>GRANT - Rechte vergeben</h3>
+        <p>Um Rechte zu vergeben, benutzen wir GRANT.</p>
+        <h4>Syntax</h4>
+        <p class="code">GRANT <i>Recht</i> ON <i>Datenbank.Tabelle</i> TO <i>Benutzer</i>@LOCALHOST IDENTIFIED BY
+            '<i>Passwort</i>'</p>
+        <p>Nehmen wir an, ein neuer Mitarbeiter ist in unsere Abteilung eingestellt worden und er soll die ganze
+            Datenbank dbKunden können und auch die Möglichkeit haben, anderen Rechte zu vergeben (WITH GRANT
+            OPTION). Dieser Mitarbeiter
+            heisst Robert.</p>
+        <p class="code">mysql&gt; GRANT ALL ON dbKunden.* TO Robert@LOCALHOST IDENTIFIED BY '123' WITH GRANT
+            OPTION;<br>Query OK, 0 rows affected (0.01 sec)</p>
+        <p>Wenn man jetzt nachschauen möchte, ob die Rechtevergabe geklappt hat, gibt man den Befehl SHOW GRANTS FOR
+            <i>Benutzer</i>@LOCALHOST.</p>
+        <p class="code">SHOW GRANTS FOR Robert@LOCALHOST;</p>
+        <table class="sql">
+            <tr>
+                <th>Grants for Robert@localhost</th>
+            </tr>
+            <tr>
+                <td>GRANT USAGE ON *.* TO 'Robert'@'localhost'<br>GRANT ALL PRIVILEGES ON `dbKunden`.* TO
+                    'Robert'@'localhost' WITH GRANT OPTION</td>
+            </tr>
+        </table>
+        <p class="code">2 rows in set (0.00 sec)</p>
+        <p>Zur Übersicht sind in diesem Link alle Rechte aufgezeigt, die es in in MySQL gibt und was diese
+            bringen:<br><a href="https://www.techonthenet.com/sql_server/grant_revoke.php"
+                target="_blank">Grant-Liste</a></p>
+        <h3>REVOKE - Rechte entziehen</h3>
+        <p>Um Rechte zu entziehen, benutzen wir REVOKE. Die Syntax ist fast genau die gleiche wie bei GRANT, man
+            ersetzt
+            einfach GRANT durch REVOKE und TO durch FROM. Das Passwort muss nicht angegeben werden. Wenn wir Robert
+            jetzt wieder alle Rechte entziehen wollen, sieht das ganze so aus:</p>
+        <p class="code">mysql&gt; REVOKE ALL FROM Robert@LOCALHOST;<br>Query OK, 0 rows affected (0.00 sec)</p>
+        <h2 id="join">JOIN - Tabellen zusammenfügen</h2>
+        <p>Mit JOIN können Daten aus mehreren Tabellen ausgelesen werden, solange es eine Verbindung zwischen
+            den Tabellen gibt. Es gibt folgende vier Arten von Joins:</p>
+        <h4 id="withoutmargin">MySQL JOINS:</h4>
+        <div id="joins_bildlich">
+            <h3>INNER JOIN - Schnittmenge</h3>
+            <div class="joins_box">
+                <img class="joins_img" src="img/inner_join.PNG" alt="inner join" />
+                <p class="code">SELECT <i>Tabelle.Attribut</i> FROM <i>Tabelle1</i> JOIN <i>Tabelle2</i> ON
+                    <i>Tabelle1.PrimaryKey</i> = <i>Tabelle2.ForeignKey</i></p>
+            </div>
+            <h3>LEFT/RIGHT INNER JOIN</h3>
+            <div class="joins_box">
+                <img class="joins_img" src="img/left_inner_join.PNG" alt="left inner join" />
+                <p class="code">SELECT <i>Tabelle.Attribut</i> FROM <i>Tabelle1</i> LEFT/RIGHT JOIN <i>Tabelle2</i>
+                    ON
+                    <i>Tabelle1.PrimaryKey</i> = <i>Tabelle2.ForeignKey</i> WHERE <i>Tabelle2.ForeignKey</i> IS NULL
+                </p>
+            </div>
+            <h3>LEFT/RIGHT OUTER JOIN</h3>
+            <div class="joins_box">
+                <img class="joins_img" src="img/left_outer_join.PNG" alt="left outer join" />
+                <p class="code">SELECT <i>Tabelle.Attribut</i> FROM <i>Tabelle1</i> LEFT JOIN <i>Tabelle2</i> ON
+                    <i>Tabelle1.PrimaryKey</i> = <i>Tabelle2.ForeignKey</i></p>
+            </div>
+            <h3>FULL OUTER JOIN</h3>
+            <div class="joins_box">
+                <img class="joins_img" src="img/full_outer_join.PNG" alt="full outer join" />
+                <p class="code">SELECT * FROM <i>Tabelle1</i> LEFT JOIN <i>Tabelle2</i> ON
+                    <i>Tabelle1.PrimaryKey</i> = <i>Tabelle2.ForeignKey</i> UNION SELECT * FROM
+                    <i>Tabelle1</i> RIGHT JOIN <i>Tabelle2</i> ON <i>Tabelle1.PrimaryKey</i> =
+                    <i>Tabelle2.ForeignKey</i>
+                </p>
+            </div>
+        </div>
+        <h3>Beispiele</h3>
+        <p>Damit wir überhaupt mehrere Tabellen verbinden können, brauchen wir dazu erstmal mehrere Tabellen. Dafür
+            laden wir uns die Datenbank 'Northwind' von Microsoft herunter. Zusätzlich müssen wir auch die Daten der
+            Tabellen herunterladen:</p>
+        <p><a href="northwind.zip">Download Northwind-Datenbank</a></p>
+        <p>Jetzt, wo wir die Datenbank heruntergeladen haben, müssen wir sie nur noch in MySQL einfügen. Dazu
+            kopieren
+            wir zuerst den ganzen Code der Datei 'northwind.sql' und fügen ihn in MySQL ein. Danach machen wir das
+            gleiche mit der Datei 'northwind-data.sql'.</p>
+        <p>Hier kann das Datenbankschema der Northwind-Datenbank gesehen werden:</p>
+        <img src="img/northwind-erd.png" class="full_width" alt="northwind" />
+        <p>Damit wir mit den Beispielen beginnen können, brauchen wir eben diese Datenbank 'northwind'. Um MySQL
+            sagen
+            zu können, dass wir nun in der Northwind-Datenbank arbeiten wollen benutzen wir folgenden Befehl:</p>
+        <p class="code">mysql&gt; USE northwind;<br>Database changed</p>
+        <h4>INNER JOIN - Schnittmenge</h4>
+        <p>Nun beginnen wir mit den Beispielen. Als erstes wollen wir einen einfachen SELECT, indem wir alle
+            Bestellungen aus der Tabelle 'orders' auslesen:</p>
+        <p class="code">mysql&gt; SELECT id, customer_id, employee_id FROM orders;</p>
+        <img src="img/join_select_bsp.PNG" alt="join select" width="200" />
+        <p class="code">48 rows in set (0.00 sec)</p>
+        <p>Ein INNER JOIN wählt immer die Schnittmenge der verbundenen Tabellen aus. Als Beispiel möchten wir uns
+            nun
+            die Bestellungs-Nummer anzeigen lassen, zusammen mit dem Namen des Kunden, der diese Bestellung
+            aufgegeben
+            hat. Doch leider haben wir in der Tabelle 'orders' keine Kundennamen, sondern nur die Kunden-IDs, und an
+            dieser stelle kommt JOIN ins Spiel. Da wir mit JOIN zwei Tabellen zusammenfügen können, werden wir nun
+            die
+            Tabelle “customers” und die Tabelle “orders” komplett selektieren. Das können wir machen, da die
+            Tabellen
+            eine Verbindung haben, und zwar die ID des Kunden:</p>
+        <p class="code">mysql&gt; SELECT * FROM customers JOIN orders ON customers.id = orders.customer_id;</p>
+        <img src="img/inner_join_bsp.PNG" class="full_width" alt="inner join" />
+        <p class="code">48 rows in set (0.00 sec)</p>
+        <p>Bei einem JOIN ALL (*) werden alle Spalten der einen Tabelle mit allen Spalten der anderen Tabelle
+            zusammengepackt, solange eine Übereinstimmung gefunden wurde. Unser JOIN hat geklappt und wir haben nun
+            die
+            Bestellungen mit den Kunden assoziiert. Doch es gibt hier einige Mängel:</p>
+        <ul>
+            <li>Einige Spalten sind doppelt vorhanden, da sie in beiden Tabellen vorhanden sind, obwohl sie die
+                gleichen
+                Werte besitzen.</li>
+            <li>Wir haben viel mehr Spalten, als wir eigentlich brauchen. Man sollte immer nur das selektieren, was
+                man
+                braucht.</li>
+        </ul>
+        <p>Deshalb werden wir unseren Query überarbeiten:</p>
+        <p class="code">mysql&gt; SELECT customers.first_name, customers.last_name, orders.id FROM customers JOIN
+            orders
+            ON customers.id = orders.customer_id;</p>
+        <img src="img/inner_join_richtig_bsp.PNG" alt="inner join" />
+        <p class="code">48 rows in set (0.00 sec)</p>
+        <h4>LEFT/RIGHT INNER JOIN - Bedingung aus anderer Tabelle</h4>
+        <p>Der LEFT/RIGHT INNER JOIN wird benutzt um Spalten aus einer Tabelle anzuzeigen, die an eine Bedingung
+            einer
+            anderen Tabellen Tabelle geknüpft sind. So kann man z.B. alle Kunden anzeigen, die noch keine Bestellung
+            abgegeben haben:</p>
+        <p class="code">mysql&gt; SELECT customers.first_name, customers.last_name, orders.id FROM customers LEFT
+            JOIN
+            orders ON customers.id = orders.customer_id WHERE orders.id IS NULL;</p>
+        <img src="img/left_inner_join_bsp.PNG" alt="left inner join" />
+        <p class="code">14 rows in set (0.00 sec)</p>
+        <h4>LEFT/RIGHT OUTER JOIN - Left Join + Schnittmenge</h4>
+        <p>Mit LEFT/RIGHT OUTER JOIN kann man den INNER JOIN und den LEFT/RIGHT INNER JOIN miteinander kombinieren.
+            Man
+            sieht auf einen Blick welche Kunden eine Bestellung abgegeben haben und welche nicht.</p>
+        <p class="code">mysql&gt; SELECT customers.first_name, customers.last_name, orders.id FROM customers LEFT
+            JOIN
+            orders ON customers.id = orders.customer_id;</p>
+        <img src="img/left_outer_join_bsp.PNG" alt="left outer join" />
+        <p class="code">62 rows in set (0.00 sec)</p>
+        <h4>FULL OUTER JOIN - Alles</h4>
+        <p>Mit dem FULL OUTER JOIN kann man aus mehreren Tabellen alle Spalten zu einer Tabelle vereinen:</p>
+        <p class="code">mysql&gt; SELECT * FROM customers LEFT JOIN orders ON customers.id = orders.customer_id
+            UNION
+            SELECT * FROM
+            customers RIGHT JOIN orders ON customers.id = orders.customer_id;</p>
+        <img src="img/full_outer_join_bsp.PNG" class="full_width" alt="full outer join" />
+        <p class="code">62 rows in set (0.00 sec)</p>
+        <h2 id="funktionen">Funktionen</h2>
+        <p>SQL-Funktionen werden sehr häufig benutzt und ausserdem oft mit anderen Statements kombiniert. In
+            folgendem
+            Link seht ihr eine Auflistung aller Funktionen und ausserdem wird bei jeder Funktion detailliert eklärt,
+            wie
+            man diese anwendet:</p>
+        <p><a href="https://www.w3schools.com/sql/sql_ref_mysql.asp" target="_blank">Übersicht Funktionen
+                W3Schools</a>
+        </p>
+        <h2 id="glossar_title">Glossar</h2>
+        <table id="glossar_table">
+            <tr>
+                <th>Begriff</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr>
+                <td>Attribut</td>
+                <td>Synonym für Spalte</td>
+            </tr>
+            <tr class="grey">
+                <td>Datensatz</td>
+                <td>Zeile einer Tabelle mit einem Satz aus Daten</td>
+            </tr>
+            <tr>
+                <td>DCL</td>
+                <td>Data Control Language</td>
+            </tr>
+            <tr class="grey">
+                <td>DDL</td>
+                <td>Data Definition Language</td>
+            </tr>
+            <tr>
+                <td>DML</td>
+                <td>Data Manipulation Language</td>
+            </tr>
+            <tr class="grey">
+                <td>DQL</td>
+                <td>Data Query Language</td>
+            </tr>
+            <tr>
+                <td>Entität</td>
+                <td>Synonym für Tabelle</td>
+            </tr>
+            <tr class="grey">
+                <td>Normalisieren</td>
+                <td>Redundanzen entfernen aus einer Tabelle mit mehreren gleichen Einträgen</td>
+            </tr>
+            <tr>
+                <td>Redundanz</td>
+                <td>Mehrfache Nennung derselben Information</td>
+            </tr>
+            <tr class="grey">
+                <td>Relation</td>
+                <td>Beziehung (hier zwischen Tabellen)</td>
+            </tr>
+            <tr>
+                <td>SQL</td>
+                <td>Structured Query Language</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>made by<br>Nino Tkalec</p>
+    </footer>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>

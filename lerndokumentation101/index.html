@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lerndokumentation 101</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <a href="https://ninotkalec.github.io/Lerndokumentationen/"><img src="img/home.png" alt="home" id="home" /></a>
+        <h1 id="titel">Lerndokumentation<br>101 - Webauftritt gestalten und realisieren</h1>
+    </header>
+    <nav>
+        <dl id="nav">
+            <dt> <a href="#Internet">Internet</a></dt>
+            <dt> <a href="#Entwicklungsumgebung">Entwicklungsumgebung</a></dt>
+            <dt> <a href="#HTML">HTML</a></dt>
+            <dd> <a href="#Elemente">Elemente</a></dd>
+            <dd> <a href="#Text_html">Text</a></dd>
+            <dd> <a href="#Besonderes_Markup">Besonderes Markup</a></dd>
+            <dd> <a href="#Listen">Listen</a></dd>
+            <dd> <a href="#Formulare">Formulare</a></dd>
+            <dd> <a href="#Flash_Video_Audio">Flash, Video & Audio</a></dd>
+            <dd> <a href="#Bilder_html">Bilder</a></dd>
+            <dd> <a href="#Links">Links</a></dd>
+            <dd> <a href="#Tabellen">Tabellen</a></dd>
+
+            <dt> <a href="#CSS">CSS</a></dt>
+            <dd> <a href="#CSS_einbinden">CSS einbinden</a></dd>
+            <dd> <a href="#CSS-Regel">CSS-Regel</a></dd>
+            <dd> <a href="#Selektoren">Selektoren</a></dd>
+            <dd> <a href="#Text_css">Text</a></dd>
+            <dd> <a href="#Fonts">Fonts</a></dd>
+            <dd> <a href="#Farbe">Farbe</a></dd>
+            <dd> <a href="#Listen_Tabellen_Formulare">Listen, Tabellen & Formulare</a></dd>
+            <dd> <a href="#Bilder_css">Bilder</a></dd>
+            <dd> <a href="#Box_Model">Box Model</a></dd>
+            <dd> <a href="#Flexbox">Flexbox</a></dd>
+            <dd> <a href="#Media_Queries">Media Queries</a></dd>
+            <dt> <a href="#Praxis">Praxis</a></dt>
+            <dd> <a href="#Wireframe">Wireframe</a></dd>
+            <dd> <a href="#Sitemap">Sitemap</a></dd>
+            <dd> <a href="#Layout_in_HTML">Layout in HTML</a></dd>
+            <dd> <a href="#Validierung">Validierung</a></dd>
+            <dd> <a href="#Testprotokoll">Testprotokoll</a></dd>
+        </dl>
+    </nav>
+    <main>
+        <h1 id="Internet">Internet</h1>
+        <p>Das Internet, umgangssprachlich auch Netz, ist ein weltweiter Verbund von Rechnernetzwerken, den autonomen
+            Systemen.
+            Es ermöglicht die Nutzung von Internetdiensten wie WWW, E-Mail, Telnet, SSH, XMPP, MQTT und FTP. Dabei kann
+            sich
+            jeder Rechner mit jedem anderen Rechner verbinden. Der Datenaustausch zwischen den über das Internet
+            verbundenen
+            Rechnern erfolgt über die technisch normierten Internetprotokolle. Die Technik des Internets wird durch die
+            RFCs
+            der Internet Engineering Task Force (IETF) beschrieben.</p>
+
+        <p>Die Verbreitung des Internets hat zu umfassenden Umwälzungen in vielen Lebensbereichen geführt. Es trug zu
+            einem
+            Modernisierungsschub in vielen Wirtschaftsbereichen sowie zur Entstehung neuer Wirtschaftszweige bei und hat
+            zu einem grundlegenden Wandel des Kommunikationsverhaltens und der Mediennutzung im beruflichen und privaten
+            Bereich geführt. Die kulturelle Bedeutung dieser Entwicklung wird manchmal mit der Erfindung des Buchdrucks
+            gleichgesetzt.
+        </p>
+
+        <p>Die Übertragung von Daten im Internet unabhängig von ihrem Inhalt, dem Absender und dem Empfänger wird als
+            Netzneutralität
+            bezeichnet.
+        </p>
+        <h1 id="Entwicklungsumgebung">Entwicklungsumgebung</h1>
+        <table id="eumgebung">
+            <tr>
+                <td><img src="img/visualstudiocode.png" alt="eumgebung1" /></td>
+                <td>Das erste, was man für eine Entwicklungsumgebung braucht, ist ein Programm, mit dem man die Webseite
+                    schreiben kann, z.B. MS Visual Studio Code.</td>
+            </tr>
+            <tr>
+                <td><img src="img/browser.png" alt="eumgebung2" /></td>
+                <td>Dazu benötigt man einen Browser um die Webseite betrachten zu können. Ich empfehle Google Chrome.
+                </td>
+            </tr>
+            <tr>
+                <td><img src="img/xampp.png" alt="eumgebung3" /></td>
+                <td>Bevor man die Webseite im Browser sehen kann, muss man den Zugriff zuerst über einen Webserver
+                    ermöglichen,
+                    z.B. XAMPP.</td>
+            </tr>
+            <tr>
+                <td><img src="img/W3Schools_logo.png" alt="eumgebung4" /><img src="img/selfhtml.png" alt="eumgebung5" />
+                </td>
+                <td>Egal wie lange man schon Webseiten schreibt und wie viele Elemente und CSS-Regeln man kennt, alles
+                    kann
+                    man niemals wissen. Deshalb gibt es Seiten wie w3schools und selfhtml.</td>
+            </tr>
+            <tr>
+                <td><img src="img/chrome-developer-tools.png" alt="eumgebung6" /></td>
+                <td>Mit den Developer-Tools kann man gleich im Browser den Code der Webseite untersuchen und auch
+                    Änderungen
+                    ausprobieren, ohne dass am echten Code was verändert wird. Man öffnet die Developer-Tools mit F12.
+                </td>
+            </tr>
+        </table>
+        <h1 id="HTML">HTML</h1>
+        <h3>HTML beschreibt die Struktur von Seiten</h3>
+        <img class="bhtml" src="img/html_seite.PNG" alt="eumgebung7" />
+        <p>Im Folgenden sehen Sie den HTML-Code für das Bild. Machen Sie sich jetzt noch keine Gedanken über diesen
+            Code.
+            Was er im Einzelnen bedeutet, sehen wir uns auf später noch ausführlich an. Der HTML-Code ist hier blau
+            dargestellt,
+            und der Text, der auf der Seite erscheinen soll, schwarz.</p>
+        <img class="bhtml" src="img/html_code.PNG" alt="eumgebung8" />
+        <h2 id="Elemente">Elemente</h2>
+        <h3>HTML verwendet Elemente zur Beschreibung der Seitenstruktur</h3>
+        <p>Elemente sind wie Behälter. Sie teilen Ihnen etwas über die Informationen zwischen ihrem öffnenden und
+            schliessenden
+            Tag mit.</p>
+        <h3>Tags unter der Lupe</h3>
+        <img class="bhtml" src="img/html_element.PNG" alt="eumgebung9" />
+        <div id="htmlelement">
+            <p>Das Zeichen zwischen den Klammern gibt den Zweck des Tags an.</p>
+            <p>Beispielsweise steht das p im obigen Beispiel für "paragraph", also Absatz.</p>
+            <p>Beim schliessenden Tag steht ein Schrägstrich hinter dem &lt;</p>
+            <p>Die Begriffe "Tag" und "Element" werden oft synonym verwendet.</p>
+            <p>Streng genommen besteht ein Element jedoch aus einem öffnenden und einem schliessenden Tag und dem, was
+                dazwischensteht.
+            </p>
+        </div>
+        <h2 id="Text_html">Text</h2>
+        <h3>Überschriften</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;h1&gt;<br>&lt;h1&gt;
+                    <br>&lt;h2&gt;
+                    <br>&lt;h3&gt;
+                    <br>&lt;h5&gt;
+                    <br>&lt;h6&gt;
+                    <br>
+                </td>
+                <td class="col2">HTML hat offiziell 6 Ebenen für Überschriften:<br>h1 ist für Hauptüberschriften da.
+                    <br>h1 wird für Zwischenüberschriften verwendet.<br>Wenn es Abschnitte unterhalb einer
+                    Zwischenüberschrift
+                    gibt, wird das Element h2 verwendet usw.
+                </td>
+            </tr>
+        </table>
+        <h3>Absätze</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;p&gt;</td>
+                <td class="col2">Um einen Absatz zu erstellen umgeben Sie die Worte, die ihn ausmachen, mit einem
+                    öffnenden
+                    &lt;p&gt;- und einem schliessenden&lt;/p&gt;-Tag. Standardmässig zeigt ein Browser den Absatzanfang
+                    in
+                    einer neuen Zeile an und lässt etwas Platz zu den nachfolgenden Absätzen.</td>
+            </tr>
+        </table>
+        <h3>Fett & Kursiv</h3>
+        <table>
+            <tr>
+                <td class="col1_html">
+                    &lt;b&gt;<br>&lt;i&gt;
+                </td>
+                <td class="col2">
+                    Wenn Sie Wörter mit den Tags &lt;b&gt; und &lt;/b&gt; umgeben, erscheinen sie in
+                    Fettschrift.<br>Wenn
+                    Sie Wörter mit den Tags &lt;i&gt; und &lt;/i&gt; umgeben, erscheinen sie in Kursivschrift.
+                </td>
+            </tr>
+        </table>
+        <h3>Weissraum</h3>
+        <p>Um den Code leichter lesbar zu machen, fügen die Autoren von Webseiten gern zusätzliche Leerzeichen oder
+            Leerzeilen
+            ein.
+        </p>
+        <p>Stösst ein Browser auf mehrere Leerzeichen nebeneinander, zeigt er nur eines davon an. Auch mehrere
+            aufeinanderfolgende
+            Zeilenumbrüche behandelt er wie einen einzigen. Das wird als <b>Weissraumreduzierung</b>
+            bezeichnet.</p>
+        <h3>Zeilenumbrüche</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;br /&gt;</td>
+                <td class="col2">Wenn Sie jedoch mitten in einem Absatz einen Umbruch wünschen, können Sie das Tag
+                    &lt;br
+                    /&gt; verwenden.</td>
+            </tr>
+        </table>
+        <h2 id="Besonderes_Markup">Besonderes Markup</h2>
+        <h3>DOCTYPE</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;!DOCTYPE html&gt;</td>
+                <td class="col2">Da es verschieden Versionen von HTML gibt, sollte eine Webseite mit einer
+                    Dokumentdeklaration
+                    (DOCTYPE) beginnen, die dem Browser mitteilt, welche dieser Versionen verwendet wird
+                </td>
+            </tr>
+        </table>
+        <h3>Kommentare in HTML</h3>
+        <table>
+            <tr>
+                <td id="kommentare" class="col1_html">&lt;!-- --&gt;</td>
+                <td class="col2">Wenn Sie in Ihren Code Kommentare einfügen möchten, die im Browser nicht sichtbar sein
+                    sollen,
+                    stellen Sie den Text zwischen folgende Zeichen:<br>&lt;!-- Hier kommentieren --&gt;
+                </td>
+            </tr>
+        </table>
+        <h3>Das Attribut id</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;p id=" "&gt;</td>
+                <td class="col2">Jedes HTML-Element kann das Attribut id aufweisen, mit dem das Element von allen
+                    anderen
+                    Elementen auf der Seite unterschieden wird. Der Wert dieses Attributs muss mit einem Buchstaben oder
+                    Unterstrich beginnen (nicht mit einer Zahl oder einem anderen Zeichen).</td>
+            </tr>
+        </table>
+        <h3>Das Attribut Class</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;p class=" "&gt;</td>
+                <td class="col2">Alle HTML-Elemente können auch das Attribut class aufweisen. Anstatt ein einzelnes
+                    Element
+                    in Dokument eindeutig zu bezeichnen, ist es manchmal notwendig, mehrere Elemente zu markieren, die
+                    sich
+                    auf die gleiche Weise von den anderen Elementen auf der Seite abheben sollen.
+                </td>
+            </tr>
+        </table>
+        <h2 id="Listen">Listen</h2>
+        <h3>Geordnete Listen</h3>
+        <img src="img/ol_text.PNG" alt=orderedlist1 />
+        <table>
+            <tr>
+                <td class="col1_html">&lt;ol&gt;
+                <td class="col2">&lt;Geordnete Listen werden mit dem Element &lt;ol&gt; erstellt.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;li&gt;</td>
+                <td class="col2">Jeder Eintrag in der Liste wird zwischen das öffnende Tag &lt;li&gt; und das
+                    schliessende
+                    &lt;/li&gt; gestellt. (li steht für "Listeneintrag.")</td>
+            </tr>
+        </table>
+        <img id="li" src="img/ol_code.PNG" alt="orderedlist2" />
+        <h3>Ungeordnete Listen</h3>
+        <img src="img/ul_text.PNG" alt="unorderedlist1" />
+        <table>
+            <tr>
+                <td class="col1_html">&lt;ul&gt;</td>
+                <td class="col2">Ungeordnete Listen werden mit dem Element &lt;ul&gt; erstellt.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;li&gt;</td>
+                <td class="col2">Jeder Eintrag in der Liste wird zwischen das öffnende Tag &lt;li&gt; und das
+                    schliessende
+                    &lt;/li&gt; gestellt. (li steht für "Listeneintrag.")</td>
+            </tr>
+        </table>
+        <h3>Definitionslisten</h3>
+        <img src="img/dl_text.PNG" alt="definitionlist1" />
+        <table>
+            <tr>
+                <td class="col1_html">&lt;dl&gt;</td>
+                <td class="col2">Definitionslisten werden mit dem Element &lt;dl&gt; erstellt und bestehen gewöhnlich
+                    aus
+                    einer Abfolge von Begriffen mit den zugehörigen Definitionen.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;dt&gt;</td>
+                <td class="col2">In diesem Element ist der zu definierende Begriff enthalten (der Definitionsterm).
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;dd&gt;</td>
+                <td class="col2">Hierin ist die Definition enthalten.</td>
+            </tr>
+        </table>
+        <h3>Verschachtelte Listen</h3>
+        <table>
+            <tr>
+                <td><img id="vl" src="img/vl_code.PNG" alt="verschachteltelisten1" />
+                    <img id="vlt" src="img/vl_text.PNG" alt="verschachteltelisten2" />
+                </td>
+                <td class="col2">Innerhalb eines &lt;li&gt;- Elements können Sie auch eine zweite Liste einfügen, um
+                    eine
+                    untergeordnete oder verschachtelte Liste zu bilden.
+                </td>
+            </tr>
+        </table>
+        <h2 id="Formulare">Formulare</h2>
+        <p>Wenn Sie Informationen von den Besuchern Ihrer Webseite einholen wollen, benötigen Sie ein Formular, das Sie
+            mit
+            dem Element &lt;form&gt; erstellen.</p>
+        <p>Die in einem Formular erfassten Informationen werden als Name/Wert-Paare gesendet.</p>
+        <p>Jedes Formularsteuerelement erhält einen Namen. Der Text, den die Benutzer eingeben, und die Werte der
+            Optionen,
+            die sie auswählen, werden an den Server gesendet.</p>
+        <p>In HTML5 wurden neue Formularelemente eingeführt, die das Ausfüllen von Formularen erleichtern.</p>
+        <h2 id="Flash_Video_Audio">Flash, Video & Audio</h2>
+        <p>Seit den späten 1990er Jahren ist Flash eine gebräuchliche Methode geworden, um Animationen zu erstellen.
+            Später
+            wurde es auch eingesetzt, um Video- und Audioinhalte auf Websites abzuspielen.</p>
+        <p>Es gibt mehrere Gründe dafür, dass Flash nicht mehr so häufig auf Websites verwendet wird:</p>
+        <p>In den Jahren 2005 und 2006 wurden einige JavaScript-Bibliotheken veröffentlicht, die es einfacher machen,
+            animierte
+            Effekte mit JavaScript zu erstellen.</p>
+        <p>Als Apple 2007 das iPhone herausbrachte und 2010 das iPad, wurde entschieden, Flash auf diesen Plattformen
+            nicht
+            zu unterstützen. Kurze Zeit später stoppte Adobe die Entwicklung des Flash-Plugins für mobile Geräte.</p>
+        <p>Ausserdem wurden gesetzliche Regelungen verabschiedet, nach denen Websites auch für Menschen mit Seh- oder
+            sonstigen
+            körperlichen Behinderungen zugänglich sein müssen. Infolgedessen wurde Flash kritisiert, da Flash-Inhalte
+            nicht
+            immer den Anforderungen an die Barrierefreiheit genügen.</p>
+        <h3>HTML5: Videos zu ihren Seiten hinzufügen</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;video&gt;</td>
+                <td class="col2">Das Element &lt;video&gt; verfügt über eine Reihe von Attributen um die Wiedergabe zu
+                    steuern:
+                </td>
+            </tr>
+        </table>
+        <table class="abstand">
+            <tr>
+                <td class="col1_html">src</td>
+                <td class="col2">Dieses Attribut gibt den Pfad der Videodatei an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">poster</td>
+                <td class="col2">Mit diesem Attribut können Sie ein Bild angeben, das angezeigt wird, während das Video
+                    heruntergeladen
+                    wird oder bis der Benutzer das Video abspielt.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">width, heigth</td>
+                <td class="col2">Diese Attribute geben die Grösse des Players in Pixeln an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">controls</td>
+                <td class="col2">Wird dieses Attributangegeben, stellt der Browser seine eigenen Steuerelemente für die
+                    Wiedergabe
+                    bereit.
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html">autoplay</td>
+                <td class="col2">Wird dieses Attribut angegeben, beginnt die Wiedergabe automatisch</td>
+            </tr>
+            <tr>
+                <td class="col1_html">loop</td>
+                <td class="col2">Wird dieses Attribut angegeben, beginnt die Wiedergabe nach dem Ende des Films erneut.
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html">preload</td>
+                <td class="col2">Dieses Attribut weist den Browser an, was er beim Laden der Seite tun soll. Es kann
+                    folgende
+                    drei Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_html wert">none</td>
+                <td class="col2">Der Browser soll das Video erst laden, wenn der Benutzer auf die Wiedergabeschaltfläche
+                    klickt.
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html wert">auto</td>
+                <td class="col2">Der Browser lädt das Video zusammen mit der Seite herunter.</td>
+            </tr>
+            <tr>
+                <td class="col1_html wert">metadata</td>
+                <td class="col2">Der Browser erfasst nur Informationen wie die Grösse, das erste Einzelbild, die
+                    Trackliste
+                    und die Dauer.</td>
+            </tr>
+        </table>
+        <h3>HTML5: Audioinhalte zu Webseiten hinzufügen</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;audio&gt;</td>
+                <td class="col2">Das Element &lt;audio&gt; weist eine Reihe von Attributen auf, mit denen Sie die
+                    Wiedergabe
+                    steuern können:
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html">src</td>
+                <td class="col2">Dieses Attribut gibt den Pfad zur Audiodatei an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">controls</td>
+                <td class="col2">Dieses Attribut gibt an, ob der Player Steuerelemente anzeigen soll. Wenn Sie deses
+                    Attribut
+                    nicht verwenden, werden standardmässig keine Steuerelemente dargestellt.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">autoplay</td>
+                <td class="col2">Ist dieses Attribut vorhanden, beginnt die Audiowiedergabe automatisch.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">preload</td>
+                <td class="col2">Dieses Attribut sagt dem Browser, was er tun soll, wenn autoplay nicht eingerichtet
+                    ist.
+                    Dieses Attribut kann dieselben Werte annehmen wie diejenigen für das Element &lt;video&gt;</td>
+            </tr>
+            <tr>
+                <td class="col1_html">loop</td>
+                <td class="col2">Dieses Attribut gibt an, dass die Audiowiedergabe nach dem Ende wieder von vorn
+                    beginnen
+                    soll.
+                </td>
+            </tr>
+        </table>
+        <h2 id="Bilder_html">Bilder</h2>
+        <h3>Bilder hinzufügen</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;img&gt;</td>
+                <td class="col2">Um Bilder zu einer Seite hinzuzufügen, verwenden Sie das Element &lt;img&gt;. Dies ist
+                    gewöhnlich
+                    ein relativer URL, der auf ein Bild auf ihrer eigenen Website zeigt.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">alt</td>
+                <td class="col2">Dieses Attribut bietet eine Beschreibung des Bildes in Textform für den Fall, dass das
+                    Bild
+                    nicht zu sehen sein sollte. Ausserdem ist es für Suchmaschinen leichter zu finden.</td>
+            </tr>
+        </table>
+        <table class="abstand">
+            <tr>
+                <td class="col1_html">title</td>
+                <td class="col2">Sie können im Element &lt;img&gt; auch das Attribut title verwenden, um zusätzliche
+                    Informationen
+                    über das Bild anzugeben. Die meisten Browser zeigen den Inhalt dieses Attributs in einem kleinen
+                    Informationsfeld
+                    an, wenn der Benutzer mit dem Mauszeiger über das Bild fährt.</td>
+            </tr>
+        </table>
+        <h3>Höhe und Breite von Bildern</h3>
+        <p>Häufig werden in &lt;img&gt;-Elementen noch zwei weitere Attribute verwendet, die die Grösse angeben:</p>
+        <table>
+            <tr>
+                <td class="col1_html">height</td>
+                <td class="col2">Gibt die Höhe des Bildes in Pixeln an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">width</td>
+                <td class="col2">Gibt die Breite des bildes in Pixeln an.</td>
+            </tr>
+        </table>
+        <p>Es dauert meistens länger, die Bilder zu laden, als den HTML-Code, der den Rest der Seite ausmacht. Daher ist
+            es sinnvoll, die Bildgrösse anzugeben, sodass der Browser den Rest der Seite schon einmal darstellen und
+            dabei
+            ausreichend Platz für das Bild lassen kann, das noch geladen wird.</p>
+        <h3>Drei Regeln zum Erstellen von Bildern</h3>
+        <ol>
+            <li class="fettlist">Speichern Sie die Bilder im Richtigen Format
+                <ul>
+                    <li>Auf Websites werden hauptsächlich Bilder der Formate JPEG, GIF und PNG verwendet. Wenn Sie das
+                        falsche
+                        Format für ihr Bild wählen, kann es sein, dass es nicht so scharf angezeigt wie möglich und dass
+                        die Webseite langsamer geladen wird.</li>
+                </ul>
+            </li>
+            <li class="fettlist">Speichern Sie die Bilder in der richtigen Grösse
+                <ul>
+                    <li>Speichern Sie das Bild mit der Breite und Höhe, die es auf der Website einnehmen soll. Hat das
+                        Bild
+                        nicht die angegebene Breite oder Höhe, sondern ist kleiner, kann es gestreckt und verzerrt
+                        werden.
+                        Ist das Bild grösser als angegeben, dauert es länger, bis es auf der Seite angezeigt wird.
+                    </li>
+                </ul>
+            </li>
+            <li class="fettlist">Verwenden Sie die richtige Auflösung
+                <ul>
+                    <li>Computerbildschirme bestehen aus kleinen Bildpunkten (Pixeln). Die Auflösungs gibt an, wie viele
+                        Pildpunkte auf ein Zoll kommen. Auf den meisten Computerbildschirmen werden Webseiten nur mit 72
+                        Pixeln pro Zoll angezeigt. Wenn Sie ein Bild mit einer höheren Auflösung speichern, wird es
+                        grösser
+                        als nötig und brauch längere Zeit zum Herunterladen.</li>
+                </ul>
+            </li>
+        </ol>
+        <h3>Bildformate</h3>
+        <table>
+            <tr>
+                <td id="tablegrey" class="col1_html">JPEG</td>
+                <td class="col2">Wenn ein Bild viele verschiedene Farben enthält, sollten Sie das Format JPEG verwenden.
+                    Fotos mit Schneelandschaften oder bewölktem Himmel wirken zwar so, als enthielten sie grosse Flächen
+                    aus Weiss oder grau, aber in Wirklichkeit besteht das Bild aus vielen verschiedenen Farben mit
+                    feinen
+                    unterschiedlichen Nuancen.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">GIF/PNG</td>
+                <td class="col2">Wenn ein Bildbereich durchgängig mit genau derselben Farbe ausgefüllt ist, spricht man
+                    von
+                    "flachen Farben". Das ist häufig in Logos, Zeichnungen und Diagrammen der Fall. Fotos von Schnee,
+                    von
+                    Gras oder vom Himmel weisen jedoch keine flachen Farben auf, sondern viele verschiedene Nuancen
+                    einer
+                    Farbe, weshalb die Formate GIF und PNG dafür nicht so gut geeignet sind.</td>
+            </tr>
+        </table>
+        <h2 id="Links">Links</h2>
+        <p>Links werden mit dem Element &lt;a&gt; erstellt. die Benutzer können auf alles klicken, was sich zwischen dem
+            öffnenden &lt;a&gt;-Tag und dem schliessenden &lt;/a&gt;-Tag befindet. Zu welcher Seite der Link führt,
+            geben
+            Sie im Attribut <i>href</i> an.</p>
+        <h3>Links zu anderen Websites</h3>
+        <p>Führt der Link zu einer anderen Website, muss der Wert von href die komplette Webadresse dieser Seite
+            angeben.
+            Dies ist ein sogenannter <b>absoluter URL.</b></p>
+        <img class="links" id="links_code" src="img/links_code.PNG" alt="links1" />
+        <img src="img/links_text.PNG" alt="links2" />
+        <h4>Absolute URLS</h4>
+        <p>URL steht für "Uniform Resource Locator" (also etwa "einheitlicher Ressourcenlokalisierer"). Jede Webseite
+            verfügt
+            über ihren eigenen URL. Dabei handelt es sich um die Webadresse, die Sie im Browser eingeben, wenn Sie diese
+            Seite besuchen möchten.</p>
+        <p>Ein absoluter URL beginnt mit dem Domänennamen der Webseite. Darauf kann der Pfad zu einer einzelnen Seite
+            folgen.
+            Ist keine Seite angegeben, wird die Startseite der Website angezeigt.</p>
+        <h3>Links zu anderen Seiten derselben Website</h3>
+        <p>Bei einem Link zu anderen Seiten derselben Website müssen Sie den Domänennamen im URL nicht angeben, sondern
+            können
+            als Abkürzung einen <b>relativen URL verwenden</b></p>
+        <p>Befinden sich alle Seiten der Webseite im selben Ordner, dann ist der Wert für das Attribut href einfach der
+            Dateiname
+            der Seite.</p>
+        <p>Sind die einzelnen Seiten der Website jedoch in verschiedenen Ordnern abgelegt, müssen Sie eine etwas
+            komplizierte
+            Syntax verwenden, um anzugeben, wo sich die Seite relativ zur aktuellen Seite befindet. Mehr darüber
+            erfahren
+            Sie auf <a href="https://www.w3schools.com/html/html_filepaths.asp"
+                target="_blank">w3schools/Link-Pfade</a>.</p>
+        <p>Um einen Link zu erstellen, der das E-Mail-Programm des Benutzers startet und eine neue Nachricht mit einer
+            bestimmten
+            E-Mail-Adresse versieht, verwenden Sie ebenfalls das Element &lt;a&gt;, geben im Attribut href als Wert
+            jedoch
+            mailto: gefolgt von der gewünschten E-Mail-Adresse ein.</p>
+        <img src="img/mailto_code.PNG" alt="links3" />
+        <h3>Links in einem neuen Fenster öffnen</h3>
+        <p>Wenn der Link die Zielseite in einem neuen Fenster öffnen soll, können Sie im öffnenden &lt;a&gt;-Tag das
+            Attribut
+            target verwenden. Als Wert verwenden Sie _blank.</p>
+        <img src="img/target_code.PNG" alt="links4" />
+        <h3>Links zu bestimmten Teilen einer Website</h3>
+        <p>Wie sie Links zu bestimmten Teilen einer Website erstellen, erfahren sie auf <a
+                href="https://www.w3schools.com/html/html_links.asp" target="_blank">w3schools/Links</a>.</p>
+        <h2 id="Tabellen">Tabellen</h2>
+        <h3>Grundlegende Tabellenstruktur</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;table&gt;</td>
+                <td class="col2">Tabellen werden mit dem Element &lt;table&gt; erstellt. Die Inhalte der Tabelle werden
+                    Zeile
+                    für Zeile geschrieben.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;tr&gt;</td>
+                <td class="col2">Den Beginn einer Zeile markieren Sie jeweils mit dem öffnenden &lt;tr&gt;-Tag. Darauf
+                    folgt
+                    jeweils ein &lt;td&gt;-Element für jede Zelle in der Zeile. Am Ende der Zeile geben Sie das
+                    schliessende
+                    &lt;/tr&gt;-Tag an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;td&gt;</td>
+                <td class="col2">Die einzelnen Zellen einer Tabelle werden durch &lt;td&gt;-Elemente dargestellt.</td>
+            </tr>
+        </table>
+        <h3>Tabellenüberschriften</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;th&gt;</td>
+                <td class="col2">Das Element &lt;th&gt; wird ebenso verwendet wie &lt;td&gt;, steht aber für die
+                    Überschrift
+                    einer Spalte oder Zeile.</td>
+            </tr>
+        </table>
+        <h3>Lange Tabellen</h3>
+        <p>Es gibt drei Elemente, um den Hauptinhalt einer Tabelle von der ersten und der letztenZeile abzusetzen.</p>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;thead&gt;</td>
+                <td class="col2">Der Kopf der Tabelle steht in einem &lt;thead&gt;-Element</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;tbody&gt;</td>
+                <td class="col2">Der Rumpf der Tabelle steht in einem &lt;tbody&gt;-Element</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;tfoot&gt;</td>
+                <td class="col2">Der Fussbereich gehört in das Element &lt;tfoot&gt;.</td>
+            </tr>
+        </table>
+        <h1 id="CSS">CSS</h1>
+        <p>In CSS erstellen Sie Regeln, die festlegen, wie der Inhalt eines Elements dargestellt werden soll.
+            Beispielsweise
+            können Sie verlangen, dass der Hintergrund einer Seite cremefarben angezeigt werden soll, alle Abschnitte in
+            Grau und in der Schriftart Arial und alle Überschriften der ersten Ebene in blauer, kursiver Times-Schrift.
+        </p>
+        <h2 id="CSS_einbinden">CSS einbinden</h2>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;link&gt;</td>
+                <td class="col2">Mit dem Element &lt;link&gt; in einem HTML-Dokument kann dem Browser mitgeteilt werden,
+                    wo sich die CSS-Datei zur Formatierung der Seite befindet. Dies ist ein leeres Element und befindet
+                    sich
+                    innerhalb des &lt;head&gt;-Elements. Es sollte die folgenden drei Attribute aufweisen:
+                </td>
+            </tr>
+            <tr>
+                <td class="col1_html">href</td>
+                <td class="col2">Gibt den Pfad zur CSS-Datei an.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">type</td>
+                <td class="col2">Gibt die Art des verknüpften Dokuments an. Der Wert muss text/css lauten.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">rel</td>
+                <td class="col2">Gibt die Beiziehung zwischen der HTML-Seite und der verknüpften Datei an. Bei der
+                    Verknüpfung
+                    zu einer CSS-Datei sollte der Wert stylesheet lauten.</td>
+            </tr>
+        </table>
+        <h2 id="CSS-Regel">CSS-Regel</h2>
+        <p>CSS-Regeln werden auf HTML-Elemente angewendet und legen fest, wie der Inhalt dieser Elemente angezeigt
+            werden
+            soll. Eine CSS-Regel besteht aus zwei Teilen: einem <b class="Selektor">Selektor</b> und einer <b
+                class="Deklaration">Deklaration</b>.</p>
+        <img src="img/css-regel.PNG" alt="cssregel1" />
+        <p>Diese Regel besagt, dass alle &lt;p&gt;-Elemente in der Schriftart Arial angezeigt werden sollen.</p>
+        <p><b class="Selektor">Selektoren</b> geben an, auf welches Element die Regel angewandt werden soll. Eine Regel
+            kann
+            auch für mehrere Elemente gelten, wenn Sie die einzelnen Elementnamen durch Kommata getrennt angeben.</p>
+        <p><b class="Deklaration">Deklarationen</b> besagen, wie die im Selektor genannten Elemente formatiert werden
+            sollen.
+            Die Deklarationen bestehen selbst aus zwei Teilen, einer <b class="Eigenschaft">Eigenschaft</b> und einem
+            <b class="Wert_cssregel">Wert</b></p>
+        <p>Innerhalb der geschweiften Klammern stehen die CSS-Deklarationen, die aus je zwei Teilen bestehen: einer <b
+                class="Eigenschaft">Eigenschaft</b>
+            und einem <b class="Wert_cssregel">Wert</b>, getrennt durch einen Doppelpunkt. In einer Deklaration können
+            auch
+            mehrere Eigenschaften angegeben werden, die Sie jeweils durch ein Semikolon trennen müssen.</p>
+        <img src="img/css-deklaration.PNG" alt="cssregel2" />
+        <p>Diese Regel besagt, dass alle &lt;h1&gt;-, &lt;h2&gt;- und &lt;h3&gt;-Elemente in der Schriftart Arial und in
+            Gelb angezeigt werden sollen.</p>
+        <p><b class="Eigenschaft">Eigenschaften</b> bezeichnen den Aspekt des Elements, den Sie ändern möchten, z.B.
+            Farbe,
+            Schriftart, Breite, Höhe und Rahmen.</p>
+        <p><b class="Wert_cssregel">Werte</b> nennen die gewünschte Einstellungen für die ausgewählte Eigenschaft. Um
+            beispielsweise
+            eine Farbeigenschaft festzulegen, geben Sie den Wert der Farbe an, in der die betreffenden Elemente
+            angezeigt
+            werden sollen.</p>
+        <h2 id="Selektoren">Selektoren</h2>
+        <table id="tselektoren">
+            <thead>
+                <tr>
+                    <th>Selektor</th>
+                    <th>Bedeutung</th>
+                    <th>Beispiel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col1_sel">Universalselektor</td>
+                    <td class="col2_sel">Gilt für alle Elemente im Dokument</td>
+                    <td class="col3_sel"><b>* { }</b><br />Gilt für alle Elemente auf der Seite
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Typselektor</td>
+                    <td class="col2_sel">Gilt für übereinstimmende Elementnamen</td>
+                    <td class="col3_sel"><b>h1, h2, h3 { }</b><br />Gilt für alle &lt;h1&gt;-, &lt;h2&gt;- und
+                        &lt;h3&gt;-
+                        Elemente
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Klassenselektor</td>
+                    <td class="col2_sel">Gilt für Elemente, deren Attribut class einen Wert hat, der mit dem hinter dem
+                        Punkt
+                        angegebenen Wert übereinstimmt</td>
+                    <td class="col3_sel"><b>.note { }</b><br />Gilt für alle Elemente, deren class-Attribut den Wert
+                        note
+                        hat
+                        <br /><b>p.note { }</b><br />Gilt nur für &lt;p&gt;-Elemente, deren class-Attribut den Wert note
+                        hat
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">ID-Selektor</td>
+                    <td class="col2_sel">Gilt für Elemente, deren Attribut id einen Wert hat, der mit dem hinter dem
+                        Nummernsymbol
+                        angegebenen Wert übereinstimmt</td>
+                    <td class="col3_sel"><b>#introduction { }</b><br />Gilt für Elemente deren id-Attribut den Wert
+                        introduction
+                        hat
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Kindselektor</td>
+                    <td class="col2_sel">Gilt für Elemente, dem angegebenen Element unmittelbar untergeordnet sind</td>
+                    <td class="col3_sel"><b>li&gt;a { }</b><br />Gilt für alle &lt;a&gt;-Elemente, die Kinder eines
+                        &lt;li&gt;-Elements
+                        sind (aber nicht für andere &lt;a&gt;-Elemente auf der Seite)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Nachkommenselektor</td>
+                    <td class="col2_sel">Gilt für Elemente, die dem angegebenen Element untergeordnet sind (nicht nur
+                        für
+                        direkt untergeordnete Elemente)
+                    </td>
+                    <td class="col3_sel"><b>p a { }</b><br />Gilt für alle &lt;a&gt;-Elemente innerhalb eines
+                        &lt;p&gt;-Elements,
+                        auch wenn andere Elemente dazwischen verschachtelt sind
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Selektor für benachbarte Geschwister</td>
+                    <td class="col2_sel">Gilt für Elemente, die dem angegebenen Element direkt gleichgeordnet sind</td>
+                    <td class="col3_sel"><b>h1+p { }</b><br />Gilt für das erste &lt;p&gt;-Element nach einem
+                        &lt;h1&gt;-Element
+                        (aber nicht für andere &lt;p&gt;-Elemente)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1_sel">Allgemeiner Geschwisterselektor</td>
+                    <td class="col2_sel">Gilt für Elemente, die dem angegebenen Element gleichgeordnet sind, auch wenn
+                        sie
+                        nicht direkt aufeinander folgen
+                    </td>
+                    <td class="col3_sel"><b>h1~p { }</b><br />Wenn Sie zwei &lt;p&gt;-Elemente haben, die Geschwister
+                        eines
+                        &lt;h1&gt;-Elements sind, gilt diese Regel für beide
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="Text_css">Text</h2>
+        <h3>Schriftarten angeben</h3>
+        <table>
+            <tr>
+                <td class="col1_css">font-family</td>
+                <td class="col2">Mit der Eigenschaft font-family können Sie die Schriftarten für den Text innerhalb der
+                    Elemente
+                    angeben, auf die die CSS-Regel angewendet wird.</td>
+            </tr>
+        </table>
+        <h3>Schriftgrösse</h3>
+        <table>
+            <tr>
+                <td class="col1_css">font-size</td>
+                <td class="col2">Mit der Eigenschaft font-size geben Sie die Grösse der Schrift an. Die Grösse kann in
+                    Pixel,
+                    Prozent oder em angegeben werden. Ein em entspricht der Breite des Buchstaben m.</td>
+            </tr>
+        </table>
+        <h3>Fettschrift</h3>
+        <table>
+            <tr>
+                <td class="col1_css">font-weight</td>
+                <td class="col2">Mit der Eigenschaft font-weight können Sie Text fetten. Diese Eigenschaft übernimmt
+                    gewöhnlich
+                    einen der beiden folgenden Werte:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">normal</td>
+                <td class="col2">Der Text wird in der normalen Stärke dargestellt.</td>
+            </tr>
+        </table>
+        <h3>Kursivschrift</h3>
+        <table>
+            <tr>
+                <td class="col1_css">font-style</td>
+                <td class="col2">Um Kursivschrift zu verlangen, verwenden Sie die Eigenschaft font-style. Sie kann die
+                    folgenden
+                    drei Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">normal</td>
+                <td class="col2">Dadurch erscheint der Text in normaler Lage.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">italic</td>
+                <td class="col2">Dadurch wird der Text kursiv dargestellt.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">oblique</td>
+                <td class="col2">Dadurch wird der Text in Schrägschrift dargestellt.</td>
+            </tr>
+        </table>
+        <h3>Gross- & Kleinschreibung</h3>
+        <table>
+            <tr>
+                <td class="col1_css">text-transform</td>
+                <td class="col2">Mit der Eigenschaft text-transform können Sie zwischen Gross- und Kleinbuchstaben
+                    umschalten.
+                    Dazu dienen folgende Werte:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">uppercase</td>
+                <td class="col2">Der Text erscheint in Grossbuchstaben.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">lowercase</td>
+                <td class="col2">Der Text erscheint in Kleinbuchstaben.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">capitalize</td>
+                <td class="col2">Der Anfangsbuchstabe jedes Wortes wird grossgeschrieben.</td>
+            </tr>
+        </table>
+        <h3>unterstreichen & druchstreichen</h3>
+        <table>
+            <tr>
+                <td colspan="2" class="col1_css">text-decoration</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">none</td>
+                <td class="col2">Alle auf den Text angewendeten Ausschmückungen werden entfernt.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">underline</td>
+                <td class="col2">Der Text wird unterstrichen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">overline</td>
+                <td class="col2">Es wird eine Linie über dem Text gezogen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">line-through</td>
+                <td class="col2">Die Wörter werden durchgestrichen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">blink</td>
+                <td class="col2">Der Text wird animiert, sodass er blinkt.</td>
+            </tr>
+        </table>
+        <h3>Ausrichtung</h3>
+        <table>
+            <tr>
+                <td class="col1_css">text-align</td>
+                <td class="col2">Mit text-align legen Sie die Ausrichtung des Textes fest. Diese Eigenschaft kann die
+                    folgenden
+                    vier Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">left</td>
+                <td class="col2">Der Text wird linksbündig ausgerichtet.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">right</td>
+                <td class="col2">Der Text wird rechtsbündig ausgerichtet.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">center</td>
+                <td class="col2">Der Text wird zentriert.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">justify</td>
+                <td class="col2">Jede Zeile eines Absatzes nimmt die gesamte Breite des umgebenden Kastens ein
+                    (Blocksatz).</td>
+            </tr>
+        </table>
+        <h2 id="Fonts">Fonts (Google)</h2>
+        <p>Auf <a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a> kann man verschiedene
+            Schriftarten
+            in die Webseite einbinden, da ja einige Schriftarten auf den Besucher-PCs nicht installiert sind.
+        </p>
+        <table>
+            <tr>
+                <td class="col1_html">@font-face</td>
+                <td class="col2">Mit @font-face können Sie auch Schriften verwenden, die auf den Computern der Besucher
+                    nicht
+                    installiert sind, indem Sie einen Pfad angeben, von dem die Schrift heruntergeladen werden kann.
+                    @font-face
+                    bindet man im HTML-File ein.</td>
+            </tr>
+            <tr>
+                <td class="col1_html">&lt;link href=" "&gt;</td>
+                <td class="col2">Mit der Eigenschaft &lt;link gibt es eine weitere Methode, eine Schriftart im HTML
+                    einzubinden.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">@import</td>
+                <td class="col2">Mit @import kann man eine Schriftart von Google Fonts im CSS einbinden die Eigenschaft
+                    schreibt
+                    man am Besten ganz am Anfang vom Code.</td>
+            </tr>
+        </table>
+        <h2 id="Farbe">Farbe</h2>
+        <h3>Vordergrundfarbe</h3>
+        <table>
+            <tr>
+                <td class="col1_css">color</td>
+                <td class="col2">Mit der Eigenschaft color bestimmen Sie die Farbe des Textes in einem Element. In CSS
+                    können
+                    Sie Farben auf drei verschiedene Weisen festlegen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">RGB-Werte</td>
+                <td class="col2">Hiermit werden die Farben durch die Angabe der Menge von Rot, Grün und Blau definiert,
+                    aus
+                    denen sie sich zusammensetzen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">HEX-Codes</td>
+                <td class="col2">Diese sechsstelligen Codes mit vorangestelltem Nummernzeichen geben ebenfalls den Ateil
+                    von Rot, Grün und Blau einer Farbe an.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">Farbnamen</td>
+                <td class="col2">Es gibt 147 vordefinierte Farbnamen, die von Browsern erkannt werden, beispielsweise
+                    yellow.</td>
+            </tr>
+        </table>
+        <h3>Hintergrundfarben</h3>
+        <table>
+            <tr>
+                <td class="col1_css">background-color</td>
+                <td class="col2">CSS behandelt alle HTML-Elemente so, als ob sie in einem Kasten stünden. Mit der
+                    Eigenschaft
+                    background-color legen Sie die Hintergrundfarbe dieses Kasten fest.</td>
+            </tr>
+        </table>
+        <h2 id="Listen_Tabellen_Formulare">Listen, Tabellen & Formulare</h2>
+        <h3>Aufzählungspunkte gestalten</h3>
+        <table>
+            <tr>
+                <td class="col1_css">list-style-type</td>
+                <td class="col2">Mit der Eigenschaft list-style-type bestimmen Sie die Form oder Gestalt von
+                    Aufzählungspunkten.</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="col1_css">Ungeordnete Listen</td>
+            </tr>
+        </table>
+        <p>Für ungeordnete Listen sind folgende Werte verfügbar:</p>
+        <table>
+            <tr>
+                <td class="col1_css wert">none<br> disc
+                    <br> circle
+                    <br> square
+                </td>
+            </tr>
+        </table>
+        <p>Für geordnete (nummerierte) Listen können Sie folgende Werte verwenden:</p>
+        <table>
+            <tr>
+                <td class="col1_css wert">decimal<br> decimal-leading-zero
+                    <br> lower-alpha
+                    <br> upper-alpha
+                    <br> lower-roman
+                    <br> upper-roman
+                    <br></td>
+            </tr>
+        </table>
+        <h3>Tabelleneigenschaften</h3>
+        <p>Sie haben bereits einige Eigenschaften kennengelernt, die gewöhnlich für Tabellen eingesetzt werden. hier
+            fasse
+            ich die folgenden Eigenschaften zusammen:</p>
+        <table>
+            <tr>
+                <td class="col1_css">width</td>
+                <td class="col2">Legt die Breite der Tabelle fest.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">padding</td>
+                <td class="col2">Legt den Abstand zwischen dem Rahmen der einzelnen Tabellenzellen und ihrem Inhalt
+                    fest.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">letter-spacing, font-size</td>
+                <td class="col2">Sorgen für eine zusätzliche Formatierung des Inhalts von Tabellenkopfzeilen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">border-top, border-bottom</td>
+                <td class="col2">Legen die Rahmen über und unter den Tabellenkopfzeilen fest.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">text-align</td>
+                <td class="col2">Richtet den Text in einigen Tabellenzellen aus.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">background-color</td>
+                <td class="col2">Ändert abwechselnd die Hintergrundfarbe der Tabellenzeilen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">:hover</td>
+                <td class="col2">Hebt eine Tabellenzeile hervor, wenn der Benutzer mit dem Mauszeiger darüber fährt.
+                </td>
+            </tr>
+        </table>
+        <h3>Cursorformen</h3>
+        <table>
+            <tr>
+                <td class="col1_css">cursor</td>
+                <td class="col2">Mit der Eigenschaft cursor können Sie den Typ des Mauszeigers steuern, den die Benutzer
+                    sehen.
+                </td>
+            </tr>
+        </table>
+        <p>Am häufigsten werden für diese Eigenschaft die folgenden Werte verwendet:</p>
+        <table>
+            <tr>
+                <td class="col1_css wert">auto<br> crosshair
+                    <br> default
+                    <br> pointer
+                    <br> move
+                    <br> text
+                    <br> wait
+                    <br> help
+                    <br> url("cursor.gif");
+                </td>
+            </tr>
+        </table>
+        <h2 id="Bilder_css">Bilder</h2>
+        <h3>Hintergrundbilder</h3>
+        <table>
+            <tr>
+                <td class="col1_css">background-image</td>
+                <td class="col2">Mit der Eigenschaft background-image können Sie ein Bild hinter ein HTML-Element legen
+                    -
+                    hinter die gesamte Seite oder nur hinter einen Teil davon. Standardmässig wird das Hintergrundbild
+                    wiederholt
+                    angezeigt, um den gesamten Kasten auszufüllen.</td>
+            </tr>
+        </table>
+        <h3>Bilder wiederholen</h3>
+        <table>
+            <tr>
+                <td class="col1_css">background-repeat</td>
+                <td class="col2">Die Eigenschaft background-repeat kann folgende vier Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">repeat</td>
+                <td class="col2">Das Hintergrundbild wird in horizontaler und in vertikaler Richtung wiederholt
+                    angezeigt.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">repeat-x</td>
+                <td class="col2">Das Bild wird nur horizontal wiederholt.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">repeat-y</td>
+                <td class="col2">Das Bild wird nur vertikal wiederholt</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">no-repeat</td>
+                <td class="col2">Das Bild wird nur einmal angezeigt.</td>
+            </tr>
+            <tr>
+                <td class="col1_css">background-attachment</td>
+                <td class="col2">Die Eigenschaft background-attachment gibt an, ob das Hintergrundbild beim Scrollen in
+                    seiner
+                    Position verbleiben oder mitwandern soll. Sie kann folgende zwei Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">fixed</td>
+                <td class="col2">Das Hintergrundbild behält seinen Platz auf der Seite bei.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">scroll</td>
+                <td class="col2">Das Hintergrundbild bewegt sich beim Scrollen nach oben bzw. unten.</td>
+            </tr>
+        </table>
+        <h2 id="Box_Model">Box Model</h2>
+        <h3>Abmessungen von Boxen</h3>
+        <table>
+            <tr>
+                <td class="col1_css">width, height</td>
+                <td class="col2">Standardmässig ist eine Box gerade gross genug für sienen Inhalt. Mit den Eigenschaften
+                    height und width können Sie die Abmessungen jedoch selbst festlegen.</td>
+            </tr>
+        </table>
+        <h3>Die Breite einschränken</h3>
+        <table>
+            <tr>
+                <td class="col1_css">min-width, max-width</td>
+                <td class="col2">Manche Seiten sind so gestaltet, dass sie ihre Grösse an die des Benutzerbildschirms
+                    anpassen.
+                    Dabei wird mit der Eigenschaft min-width die Mindesbreite angegeben und mit max-width die
+                    Höchstbreite.</td>
+            </tr>
+        </table>
+        <h3>Rahmenbreite</h3>
+        <table>
+            <tr>
+                <td class="col1_css">border-width</td>
+                <td class="col2">Mit der Eigenschaft border-width regeln Sie die Breite eines Rahmens. Der Betrag kann
+                    entweder
+                    in Pixeln oder mit dem Wert thin, medium oder thick angegeben werden. Prozentwerte sind bei dieser
+                    Eigenschaft
+                    nicht möglich</td>
+            </tr>
+        </table>
+        <h3>Rahmenart</h3>
+        <table>
+            <tr>
+                <td class="col1_css">border-style</td>
+                <td class="col2">Die Art des Rahmens können Sie mit border-style festlegen. Diese Eigenschaft kann die
+                    folgenden
+                    Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">solid</td>
+                <td class="col2">Eine einfache, durchgezogene Linie.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">dotted</td>
+                <td class="col2">Eine Reihe von quadratischen Punkten.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">dashed</td>
+                <td class="col2">Eine gestrichelte Linie.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">double</td>
+                <td class="col2">Zwei druchgezogene Linien.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">groove</td>
+                <td class="col2">Der Rahmen erscheint wie in die Seite eingeschnitten.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">ridge</td>
+                <td class="col2">Der Rahmen scheint aus der Seite hervorzuragen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">inset</td>
+                <td class="col2">Die Box scheint in die Seite hineinzusinken.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">outset</td>
+                <td class="col2">Die Box scheint aus der Seite herauszutreten.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">hidden<b class="blackintable">/</b>none</td>
+                <td class="col2">Es wird kein Rahmen angezeigt.</td>
+            </tr>
+        </table>
+        <h3>Rahmenfarbe</h3>
+        <table>
+            <tr>
+                <td class="col1_css">border-color</td>
+                <td class="col2">Die Farbe von Rahmen können Sie mit RGB-Werten, Hex-Codes und CSS-Farbnamen angeben.
+                </td>
+            </tr>
+        </table>
+        <h3>Innenrand</h3>
+        <table>
+            <tr>
+                <td class="col1_css">padding</td>
+                <td class="col2">Mit der Eigenschaft padding geben Sie den Abstand zwischen dem Inhalt eines Elements
+                    und
+                    seinem Rahmen an.</td>
+            </tr>
+        </table>
+        <h3>Aussenrand</h3>
+        <table>
+            <tr>
+                <td class="col1_css">margin</td>
+                <td class="col2">Mit der Eigenschaft margin regeln Sie den Abstand zwischen den Kästen. Der Wert wird
+                    gewöhnlich
+                    in Pixeln angegeben, wobei jedoch auch Prozent- und em-Werte möglich sind.</td>
+            </tr>
+        </table>
+        <h3>Inline- & Blockelemente umwandeln</h3>
+        <table>
+            <tr>
+                <td class="col1_css">display</td>
+                <td class="col2">Mit der Eigenschaft display können Sie Inline- in Block-Elemente umwandeln und
+                    umgekehrt.
+                    Ausserdem ist es damit möglich, Elemente auf der Seite auszublenden. Diese Eigenschaft kann folgende
+                    Werte annehmen:</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">inline</td>
+                <td class="col2">Sorgt dafür, dass sich ein Block-Element wie ein Inline-Element verhält.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">block</td>
+                <td class="col2">Sorgt dafür, dass sich ein Inline-Element wie ein Block-Element</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">inline-block</td>
+                <td class="col2">Sorgt dafür, dass ein Block-Element die Flusseigenschaften eines Inline-Elements
+                    annimmt,
+                    aber alle anderen Aspekte eines Block-Elements beibehält.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">none</td>
+                <td class="col2">Blendet das Element von der Seite aus. Das Element verhält sich also so, als sei es gar
+                    nicht auf der Seite vorhanden.</td>
+            </tr>
+        </table>
+        <h3>Boxen verbergen</h3>
+        <table>
+            <tr>
+                <td class="col1_css">visibility</td>
+                <td class="col2">Mit der Eigenschaft visibility können Sie Boxen vor den Benutzern verbergen. Dabei
+                    bleibt
+                    jedoch ein leerer Platz an der Stelle zurück, an der das Element sonst angezeigt würde. Diese
+                    Eigenschaft
+                    kann die beiden folgenden Werte annehmen.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">hidden</td>
+                <td class="col2">Verbirgt das Element.</td>
+            </tr>
+            <tr>
+                <td class="col1_css wert">visible</td>
+                <td class="col2">Zeigt das Element an.</td>
+            </tr>
+        </table>
+        <h2 id="Flexbox">Flexbox</h2>
+        <p>Mit Flexboxen kann man das Problem der Ausrichtung eines Elements lösen. Eine sehr gute Erklärung mit Übungen
+            findet man auf <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                target="_blank">css-tricks.com</a></p>
+        <h2 id="Media_Queries">Meida Queries</h2>
+        <p>Mit Media Queries versucht man seine Webseite "responsive" zu machen. Das bedeutet, die Webseite soll auf
+            jedem
+            Gerät mit jeder Bildschirmauflösung ansprechend aussehen. Wie das funktioniert, wird auf <a
+                href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank">w3schools</a> sehr gut
+            erklärt.</p>
+        <h1 id="Praxis">Praxis</h1>
+        <p>Bevor man überhaupt daran denkt ein HTML-File zu erstellen, muss man die Seite vorbereiten. Die folgenden
+            zwei
+            Kapitel machen dabei den Anfang.</p>
+        <h2 id="Wireframe">Wireframe</h2>
+        <p>Ein Wireframe ist eine einfache Skizze der wichtigsten Informationen, die auf die einzelnen Seiten einer
+            Website
+            gehören. Sie zeigt die Hierarchie der Informationen und den dafür benötigten Platz.</p>
+        <p>Viele Designer beginnen damit, Wireframes mit den Elementen zu erstellen, die auf den einzelnen Seiten
+            erscheinen
+            müssen. Dazu skizzieren sie die Bereiche der Seite, auf denen Die Elemente stehen sollen. Auf <a
+                href="https://gomockingbird.com/" target="_blank">gomockingbird.com</a>
+            kann man ganz einfach ein Wirefram erstellen.</p>
+        <h2 id="Sitemap">Sitemap</h2>
+        <p>Nachdem man sich Gedanken darüber gemacht hat, was Sie auf Ihrer Seite zeigen müssen, sollten Sie diese
+            Informationen
+            in Abschnitte oder Seiten gliedern. Dabei erstellen Sie ein Schaubild der Seiten, um die Struktur der
+            Website
+            darzustellen. Dieses Diagramm wird als Sitemap bezeichnet und zeigt die Gruppierung der Seiten.</p>
+        <p>Um zu entscheiden, welche Informationen auf welche Seite kommen sollen, können Sie mit Karteikarten arbeiten.
+            Auf <a href="https://www.gloomaps.com/" target="_blank">gloomaps.com</a> ist es sehr simpel eine Sitemap zu
+            erstellen.</p>
+        <h2 id="Layout_in_HTML">Layout in HTML</h2>
+        <h3>Herkömmliche HTML-Layouts</h3>
+        <p>Lange gruppierten Webautoren zusammengehörige Bestandteile einer Seite (z.B. die Teile, die den Kopfbereich,
+            einen
+            Artikel, den Fussbereich oder eine Marginalspalte bilden) in &lt;div&gt;-Elementen. Um anzugeben, welche
+            Rolle
+            diese &lt;div&gt;-Bereiche in der Struktur der Seite spielen, wurden die Attribute class und id verwendet.
+        </p>
+        <h3>Neue Layoutelemente in HTML5</h3>
+        <p>In HTMLt wurden neue Elemente eingeführt, um eine Seite in verschieden Abschnitte aufzuteilen. Die Namen
+            dieser
+            Elemente geben an, was für Inhalte sich jeweils darin befinden. Dabei kann es immernoch Änderungen geben,
+            was
+            Webautoren jedoch nicht daran hindert, sie jetzt schon zu verwenden.</p>
+        <h3>Kopf- & Fussbereiche</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;header&gt; &lt;footer&gt;</td>
+                <td class="col2">Die Elemente &lt;header&gt; und &lt;footer&gt; können für Folgendes verwendet werden:
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="col2 withoutborder">Die Kopf- und Fussbereiche am oberen und unteren Rand jeder Seite einer
+                    Website.<br>Kopf-
+                    und Fussbereiche für einzelne &lt;article&gt;- oder &lt;section&gt;-Elemente auf einer Seite.</td>
+            </tr>
+        </table>
+        <h3>Navigation</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;nav&gt;</td>
+                <td class="col2">Das Element &lt;nav&gt; enthält die Hauptnavigationsabschnitte der Website.</td>
+            </tr>
+        </table>
+        <h3>Gliederung</h3>
+        <table>
+            <tr>
+                <td class="col1_html">&lt;div&gt;</td>
+                <td class="col2">Wenn es in einem Fall kein geeignetes Element zur Gruppierung gibt, verwenden Sie nach
+                    wie
+                    vor &lt;div&gt;.</td>
+            </tr>
+        </table>
+        <h2 id="Validierung">Validierung</h2>
+        <p>Bevor man eine Seite veröffentlicht, muss sie valide sein. Das heisst, sie muss gewissen Regeln entsprechen,
+            die
+            von W3C (World Wide Web Consortium) aufgestellt wurden. Eine gute Validerungsseite ist <a
+                href="https://validator.w3.org/" target="_blank">validator.w3.org</a>.</p>
+        <h2 id="Testprotokoll">Testprotokoll</h2>
+        <p>Es gibt verschiedene Möglichkeiten eine Seite zu testen. Egal welche Methode man benutzt, man braucht immer
+            ein
+            Testprotokoll dazu. Folgende Dinge müssen auf jedem Testprotokoll ersichtlich sein:</p>
+        <p>Tester, Datum, Name des Testfalls, Testfallbeschreibung, Testschritte, Testergebnis und gegebenenfalls
+            Änderungen
+            nach dem Testen.</p>
+    </main>
+</body>
+
+</html>

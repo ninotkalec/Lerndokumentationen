@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lerndokumentation 307</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a href="https://ninotkalec.github.io/Lerndokumentationen/"><img src="img/home.png" alt="home" id="home" /></a>
+        <h1 id="titel">Lerndokumentation<br>307 – Interaktive Webseite erstellen</h1>
+        <div id="navdiv"></div>
+        <nav id="navbar">
+            <a href="#web-formulare">
+                <div id="firstdiv">Web-Formulare</div>
+            </a>
+            <a href="#JavaScript">
+                <div>JavaScript</div>
+            </a>
+            <a href="#jQuery">
+                <div>jQuery</div>
+            </a>
+            <a href="#php">
+                <div>PHP</div>
+            </a>
+            <a href="#projektManagement">
+                <div>Projekt-Management</div>
+            </a>
+            <a href="#glossar_title">
+                <div id="lastdiv">Glossar</div>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <h2 id="web-formulare">Web-Formulare</h2>
+        <p>Web-Formulare sind eine Schwachstelle in vielen Webseiten. <b>Worauf ist zu achten?</b></p>
+        <h4>Weniger ist mehr</h4>
+        <p>Verwenden Sie nur unbedingt notwendige Felder. Niemand füllt gerne umfangreiche Formulare aus. Zu grosse
+            Formulare können einen Interessenten davon abhalten mit Ihnen in Kontakt zu treten. Verlangen Sie keine
+            Daten, die Sie auch selber ermitteln können. So macht die Abfrage einer Telefaxnummer nur noch in sehr
+            seltenen Fällen einen Sinn!</p>
+        <h4>Pflichtfelder sichtbar machen</h4>
+        <p>Zeigen Sie, welches Pflichtfelder sind. Pflichtfelder müssen unbedingt ausgefüllt werden. Als Standard hat
+            sich das Sternchen * etabliert.</p>
+        <h4>HTML-Möglichkeiten sinnvoll ausnutzen</h4>
+        <p>Übersichtliche Formulare bestehen aus Eingabefeldern, Kontrollkästchen, Auswahlmenüs und
+            Optionsschaltflächen. Vermeiden Sie, dass der Benutzer selber viel eintippen muss. HTML5 bietet viele
+            Möglichkeiten, die man früher in Formularen vermisst hat.</p>
+        <h4>Formulare für Mobile-Geräte</h4>
+        <p>Stellen Sie bei den Feldern das richtige type-Attribut ein und verwenden Sie nicht für alle Felder den
+            Eintrag TEXT. Wenn Sie HTML5 verwenden, stellen Sie sicher, dass die Feldattribute korrekt definiert sind,
+            damit auf mobilen Geräten die relevante Tastatur auf dem Bildschirm angezeigt wird.</p>
+        <h4>Geeignete Fehlermeldungen</h4>
+        <p>Überprüfen Sie auch, ob das System geeignete und verständliche Fehlermeldungen bei Falscheingaben produziert.
+        </p>
+        <h3>GET vs. POST</h3>
+        <p>Formulare können mit zwei verschiedenen Methoden gesendet werden: <b>GET</b> und <b>POST</b></p>
+        <h4>GET</h4>
+        <p>Bei <b>GET</b> werden die Werte aus dem Formular an das Ende des URLs angehängt, der im Attribut
+            <b>action</b> angegeben ist. Diese Methode eignet sich ideal für:</p>
+        <ul>
+            <li>Kurze Formulare<br>(z.B. Suchfelder)</li>
+            <li>Abrufen von Daten vom Webserver (ohne Daten zu senden, die zu einer Datenbank hinzugefügt oder daraus
+                entfernt werden sollen)</li>
+        </ul>
+        <h4>POST</h4>
+        <p>Bei der Methode <b>POST</b> werden die Werte in sogenannten HTTP-Headern gesendet. Verwenden Sie <b>POST</b>
+            im Allgemeinen bei Formularen der folgenden Art:</p>
+        <ul>
+            <li>Formulare, in denen Benutzer Dateien hochladen können</li>
+            <li>Lange Formulare</li>
+            <li>Formulare mit sensiblen Daten<br>(z.B. Passwörtern)</li>
+            <li>Formulare, die Informationen zu einer Datenbank hinzufügen oder daraus entfernen</li>
+        </ul>
+        <p>Wird die Methode nicht angegeben, so werden die Formulardaten mit <b>GET</b> gesendet.</p>
+        <h3>Validierung</h3>
+        <p>Wahrscheinlich haben Sie im Web schon Formulare gesehen, die den Benutzern Rückmeldung geben, falls sie
+            falsch ausgefüllt werden. Dieser Vorgang wird als Formularvalidierung bezeichnet.</p>
+        <p>Diese Validierung wurde immer mit JavaScript durchgeführt (nächstes Kapitel). In HTML5 jedoch wurden
+            Validierungsmöglichkeiten eingeführt, die die Arbeit dem Browser überlassen.</p>
+        <p>Durch die Validierung wird sichergestellt, dass die Benutzer Informationen in einer Form eingeben, die der
+            Server verstehen kann. Die Validierung der Inhalte vor dem Absenden Formulars bietet verschiedene Vorteile:
+        </p>
+        <ul>
+            <li>Der Server muss weniger Arbeit verrichten.</li>
+            <li>Die Benutzer können Probleme schneller erkennen, wenn die Validierung noch im Browser stattfindet und
+                nicht erst auf dem Server.</li>
+        </ul>
+        <p>Ein Beispiel für die Formularvalidierung durch HTML5 bildet das Attribut <b>required</b>, mit dem Sie jedes
+            Steuerelement kennzeichnen können, dass die Benutzer unbedingt ausfüllen müssen. Dieses HTML5-Attribut muss
+            keinen Wert haben. Da es in HTML4 aber keine Attribute ohne Wert gab, versehen einige Web-Autoren dieses
+            Attribut mit dem Wert <b>required</b>.</p>
+        <h3>Formular-Elemente</h3>
+        <p>Eine komplette Liste aller Formular-Elemente von HTML5 finden Sie in folgendem Link:</p>
+        <p><a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">Formular-Elemente
+                W3Schools</a></p>
+        <h3>Sicherheit</h3>
+        <p>Die Sicherheit ist heutzutage ein recht kritisches Thema, denn es werden sehr viele sensible Daten versendet,
+            welche nicht richtig verschlüsselt werden, die einfach zu hacken sind. Deshalb sollten Sie alle Daten mit
+            der POST-Methode übermitteln, diese ist zwar auch nicht 100% sicher aber immer noch viel besser als die
+            GET-Methode. Wenn Sie eine Suchfunktion auf ihrer Seite eingebaut haben, dann können Sie dies schon mit
+            einer GET-Methode lösen, sobald aber Kundendaten an oder von einem Server gesendet werden, sollten diese mit
+            der POST-Methode behandelt werden, besser wäre noch, wenn diese Daten verschlüsselt werden. Angaben wie
+            Kontonummer, Kartenpins, Kreditkarten-Daten oder andere sehr sensible Daten sollten Sie aber auch nicht mit
+            POST versenden, denn diese sind auch für diese Zwecke nicht sicher genug. Die Felder sollten auch richtig
+            validiert werden, nicht, dass ein Hacker einen Code eingibt und dann stürzt die Datenbank ab, Kundendaten
+            werden zurückgeschickt und so weiter. Wenn Daten aus einer Datenbank ausgelesen werden, welche diese Person
+            nichts angehen, nennt man das "SQL-Injection". Das geht unter das Thema hacken und ist strafbar. Damit dies
+            aber nicht geschieht, können Sie die Felder richtig validieren und kein SQL-Code kommt hindurch. Das ist
+            auch deshalb wichtig, da eine Person so auch PHP-Code an den Server senden kann und das System übernehmen
+            könne. Deshalb geht die Sicherheit immer vor.</p>
+        <h2 id="JavaScript">JavaScript</h2>
+        <p>JavaScript ist eine Programmiersprache mit der sich komplexe Programme in eine Webseite realisieren lassen.
+            Immer wenn eine Webseite mehr macht als nur statische Informationen anzuzeigen, (z.B:</p>
+        <ul>
+            <li>Zeitliche Inhalt-Updates (Liveticker)</li>
+            <li>interaktive Karten (Google Maps)</li>
+            <li>animierte 2D/3D Grafiken (Spiele)</li>
+            <li>etc.)</li>
+        </ul>
+        <p>kannst du dir sicher sein das JavaScript benutzt wurde. Es ist die Dritte der Drei Standard-Technologien im
+            Web, nach HTML und CSS.</p>
+        <img src="img/cake.png" alt="cake" />
+        <ul>
+            <li>HTML ist die Markup-Language, die wir benutzen, um eine Webseite zu strukturieren und unsere Inhalte
+                darzustellen, zum Beispiel durch Paragraphen, Überschriften, Tabellen aber auch um Bilder und Videos in
+                die Webseite einzubinden.</li>
+            <li>CSS ist die Sprache, um Stil-Regeln für HTML zu definieren, zum Beispiel, indem wir die Hintergrundfarbe
+                und die Schriftart ändern.</li>
+            <li>JavaScript ist eine Programmiersprache, die es erlaubt dynamische Updates der Inhalte, animierte Bilder
+                und noch sehr viel mehr zu realisieren.</li>
+        </ul>
+        <p>Die drei Teile bauen gut auf einander auf. Hier mal ein einfaches Beispiel: Wir können zunächst HTML
+            benutzten, um eine Struktur zu bauen.</p>
+        <div class="code">
+            <p>
+                <span class="grau">&lt;</span><span class="blau">p</span><span class="grau">&gt;</span>Player 1:
+                Chris<span class="grau">&lt;/</span><span class="blau">p</span><span class="grau">&gt;</span>
+            </p>
+        </div>
+        <div id="code_text1">
+            <p>Player 1: Chris</p>
+        </div>
+        <p>Anschliessend können wir mit einigen CSS-Regeln denn Satz schön aussehen lassen:</p>
+        <div class="code">
+            <p>
+                <span class="hellorange">p</span> {
+            </p>
+            <div class="code_padding">
+                <p>
+                    <span class="hellblau">font-family</span>: <span class="orange">'Roboto Mono'</span>, <span
+                        class="orange">monospace</span>;<br><span class="hellblau">text-transform</span>: <span
+                        class="orange">uppercase</span>;<br><span class="hellblau">background-color</span>: <span
+                        class="orange">yellow</span>
+                </p>
+            </div>
+            <p>}</p>
+        </div>
+        <div id="code_text2">
+            <p>Player 1: Chris</p>
+        </div>
+        <p>Und nun wollen wir, dass der Text auf den Input des Benutzers reagiert.</p>
+        <div class="code">
+            <p>
+                <span class="blau">var </span><span class="hellblau">para = document</span>.<span
+                    class="gelb">getElementsByTagName</span>(<span class="orange">'p'</span>);<br><span
+                    class="hellblau">para</span>.<span class="gelb">addEventListener</span>(<span
+                    class="orange">'click'</span>, <span class="hellblau">updateName</span>);<br><span
+                    class="blau">function</span><span class="gelb">updateName</span>() {<br><span class="blau">var
+                </span><span class="hellblau">name = </span><span class="gelb">prompt</span>(<span class="orange">'Enter
+                    a new name'</span>);<br><span class="hellblau">para</span>.<span class="hellblau">textContent</span>
+                = <span class="orange">'Player 1 '</span> + <span class="hellblau">name</span>;<br>}
+            </p>
+        </div>
+        <div id="code_text3">
+            <p id="player1">Klick auf mich!</p>
+        </div>
+        <h3>Wozu ist das nützlich?</h3>
+        <p>Der Kern von JavaScript ähnelt dem anderer Programmiersprachen. In JavaScript kannst du:</p>
+        <ul>
+            <li>Nützliche Werte in Variablen speichern. Wie im Beispiel, als wir eine Variable verwendet haben, um den
+                eingegebenen Namen zu speichern.</li>
+            <li>Operationen auf Texten ( in der Programmierung "Strings" genannt). Im oberen Beispiel hatten wir den
+                String "Player 1:" und die Variable name verbunden und (wenn name "Chris" ist) haben wir den Text
+                "Player 1: Chris" bekommen.</li>
+            <li>Mit Code auf Events in einer Webseite reagieren. Wir haben ein click Event benutzt um darauf zu
+                reagieren, wenn man auf das Label drückt.</li>
+        </ul>
+        <h3>JavaScript mit HTML-Dateien verknüpfen</h3>
+        <p>Wenn Sie auf einer Webseite JavaScript verwenden wollen, müssen Sie dem Browser mithilfe des HTML-Elements
+            &lt;script&gt; mitteilen, dass der Code in einem Skript steht. Das Attribut src dieses Elements gibt an, wo
+            die JavaScript-Datei gespeichert ist.</p>
+        <h3>Skripts auf der Seite Platzieren</h3>
+        <p>Hin und wieder werden Sie JavaScript-Code auch auf der HTML-Seite zwischen &lt;script&gt;- und
+            &lt;/script&gt;-Tags sehen. (Es ist allerdings besser, ihn in einer eigenen Datei unterzubringen.)
+            Grundsätzlich muss der &lt;script&gt;-Tag kurz vor dem End-Tag des Bodys stehen.</p>
+        <div class="code">
+            <div class="code_padding">
+                <p>
+                    <span class="grau">&lt;</span><span class="blau">script </span><span
+                        class="hellblau">src</span>=<span class="orange">"script.js"</span><span
+                        class="grau">&gt;&lt;/</span><span class="blau">script</span><span class="grau">&gt;</span>
+                </p>
+            </div>
+            <p>
+                <span class="grau">&lt;/</span><span class="blau">body</span><span class="grau">&gt;</span>
+            </p>
+        </div>
+        <h3>Begriffe</h3>
+        <h4>Variablen</h4>
+        <p>Mit Variablen können Werte sowie Strings zwischengespeichert werden. Dies ist eine sehr nützliche Funktion.
+            Eine Variable kann Definiert werden, dann kann ihr später einen Wert zugewiesen werden. Diese Schritte
+            können aber auch zusammen gemacht werden. Im Beispiel wird zuerst die Variable definiert, dann wird ihr ein
+            Wert gegeben. Die zweite Variable ist alles in einem Schritt, bei der dritten Variable werden die ersten
+            beiden zusammengezählt und bei der vierten wird ein String eingespeichert, ein String ist eine Abfolge von
+            Zeichen. Variablennamen dürfen nicht mit einer Zahl beginnen.</p>
+        <div class="code">
+            <p>
+                <span class="blau">var</span> <span class="hellblau">eins</span>;<br><span class="hellblau">eins</span>
+                = <span class="grün">1</span>;
+            </p>
+            <p>
+                <span class="blau">var</span> <span class="hellblau">zwei</span> = <span class="grün">2</span>;
+            </p>
+            <p>
+                <span class="blau">var</span> <span class="hellblau">drei</span> = <span class="hellblau">eins</span> +
+                <span class="hellblau">zwei</span>;
+            </p>
+            <p>
+                <span class="blau">var</span> <span class="hellblau">text</span> = <span class="orange">"Ich bin ein
+                    String"</span>;
+            </p>
+        </div>
+        <h4>Arrays</h4>
+        <p>Ein Array ist eine Liste aus mehreren Werten. Arrays werden wie Variablen definiert, nur, dass alle Werte
+            durch Komma getrennt in [ ] Klammern geschrieben werden. Sollen diese Arrays ausgegeben werden, kann dies
+            gleich wie bei einer Variable gemacht werden. Muss eine bestimmte Stelle eines Arrays ausgeben, so kann die
+            Stelle in [ ] Klammern gesetzt werden. Hier muss beachtet werden, dass die Nummerierung mit 0 beginnt.</p>
+        <div class="code">
+            <p>
+                <span class="blau">var</span> <span class="hellblau">array1</span> = [<span class="grün">1</span>, <span
+                    class="grün">2</span>, <span class="grün">3</span>, <span class="grün">4</span>, <span
+                    class="grün">5</span>];
+            </p>
+            <p>
+                <span class="blau">var</span> <span class="hellblau">array2</span> = [<span
+                    class="orange">"Hallo"</span>, <span class="orange">"Welt"</span>];
+            </p>
+        </div>
+        <h4>Objekte</h4>
+        <p>Ein Objekt fasst mehrere Variablen, Arrays und Funktionen zu einem Modell zusammen. In Objekten werden neue
+            Schreibweisen für Variablen verwendet. Am besten lässt sich das mit einem Beispiel zeigen, lassen Sie sich
+            aber nicht verwirren wegen der Funktion am Schluss, Funktionen werden unter Funktionen angesprochen. Das
+            Beispiel wird auf ein Hotel angewendet:</p>
+        <div class="code">
+            <p>
+                <span class="blau">var</span> <span class="hellblau">hotel</span> = {
+            </p>
+            <p class="code_padding">
+                <span class="hellblau">name:</span> <span class="orange">"Quay"</span>,<br>
+                <span class="hellblau">rooms:</span> <span class="grün">40</span>,<br>
+                <span class="hellblau">booked:</span> <span class="grün">25</span>,<br>
+                <span class="hellblau">gym:</span> <span class="blau">true</span>,<br>
+                <span class="hellblau">roomTypes:</span> [<span class="orange">"einzel"</span>, <span
+                    class="orange">"doppel"</span>, <span class="orange">"suite"</span>]
+            </p>
+            <p>};</p>
+        </div>
+        <p>Die erste Stelle ist der Name, die zweite Stelle ist der Wert. Array können auch in Objekte gespeichert
+            werden. Sie können Objekte auch ausgeben. Objekte können auch bearbeitet werden, wie eine Variable mit
+            hotel.name oder mit hotel['name'].</p>
+        <h4>Funktionen</h4>
+        <p>Mit Funktionen kann Code ausgelagert werden, welcher viele Male verwendet wird. Funktionen werden mit
+            function fname(Parameter) {Inhalt der Funktion}. Der Inhalt ist der Code, welcher beim Verwenden der
+            Funktion ausgeführt werden soll. In die Klammern können Parameter eingesetzt werden, mit welchen man in der
+            Funktion arbeiten kann. Ich persönlich finde, dass in folgendem Link sehr gut erklärt wird, wie und wo man
+            Funktionen einsetzt:</p>
+        <p><a href="https://www.html-seminar.de/javascript-funktionen.htm" target="_blank">HTML-Seminar Funktionen</a>
+        </p>
+        <h4>Schleifen</h4>
+        <p>Schleifen sind ein einfaches Werkzeug, um einzelne Schritte wiederholt auszuführen. In folgendem Link wird
+            erklärt wie Schleifen eingesetzt werden und welche Arten von Schleifen es gibt:</p>
+        <p><a href="https://wiki.selfhtml.org/wiki/JavaScript/Schleife" target="_blank">SelfHTML Schleifen</a></p>
+        <h4>Bedingungen</h4>
+        <p>Mit Bedingungen sind die if-Befehle gemeint. In folgendem Link werden diese erläutert:</p>
+        <p><a href="https://www.w3schools.com/js/js_if_else.asp">W3Schools if-Befehle</a></p>
+        <h3>Formulare mit JavaScript validieren</h3>
+        <p>JavaScript prüft Formulare, um dem Benutzer und dem Programmierer das lästige Hin- und Her zwischen der
+            Anwendung auf dem Server und dem Browser zu ersparen.</p>
+        <ul>
+            <li>Sind alle erforderlichen Felder ausgefüllt?</li>
+            <li>Haben wir eine valide Emailadresse?</li>
+            <li>Liegt ein Datum vor?</li>
+            <li>Ist die Eingabe in diesem Feld eine Zahl?</li>
+        </ul>
+        <p>In folgendem Link wird erklärt, wie man eine Validierung durch JavaScript erreicht:</p>
+        <p><a href="https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/Formulareingaben_mit_JavaScript_validieren"
+                target="_blank">SelfHTML Clientseitige Validierung</a></p>
+        <h2 id="jQuery">jQuery</h2>
+        <p>jQuery ist eine frei verfügbare JavaScript-Bibliothek die Funktionen zur DOM-Navigation und -Manipulation zur
+            Verfügung stellt.</p>
+        <p>DOM steht für "Document Object Model" und ist eine Art Baumstruktur eines HTML-Dokuments.
+            Dabei steht jeder Knoten ein Objekt dar, welches einen Teil des Dokumentes repräsentiert, z. B. einen
+            Absatz, eine Überschrift, ein Video oder etwa eine Tabellenzelle.</p>
+        <img src="img/dom.png" alt="dom" />
+        <p>jQuery ist kurzgesagt eine Vereinfachung von JavaScript. Damit kann der lange und komplizierte Code von
+            JavaScript sehr schnell gekürzt werden. Hier ein Beispiel:</p>
+        <h4>JavaScript</h4>
+        <div class="code">
+            <p>
+                <span class="blau">var</span> <span class="hellblau">divs</span> = <span
+                    class="hellblau">document</span>.<span class="gelb">querySelectorAll</span>(<span
+                    class="orange">"div"</span>);
+            </p>
+        </div>
+        <h4>jQuery</h4>
+        <div class="code">
+            <p>
+                <span class="blau">var</span> <span class="hellblau">divs</span> = <span class="gelb">$</span>(<span
+                    class="orange">"div"</span>);
+            </p>
+        </div>
+        <p>Diese Beispiele ergeben beide das gleiche Ergebnis. Sie speichern beide den Inhalt aller Divs in einer
+            Variable namens "divs".</p>
+        <p>jQuery benutzt also genau wie CSS Selektoren. Das macht es einfacher als bei JavaScript, bei dem immer
+            eine komplizierte Funktion benutzt werden muss. jQuery ist die meistverwendete JavaScript-Bibliothek. Jede
+            zweite
+            Website und rund 75% der 10'000 meistbesuchten Webseiten nutzen jQuery.</p>
+        <p>Um jQuery benutzen zu können, muss es wie JavaScript eingebunden werden, jedoch als absolute URL. Es gibt im
+            Internet verschiedene jQuery-Anbieter. Am besten gibt man "jQuery CDN" in der Suchleiste ein und klickt auf
+            den ersten Link. Dort wird erklärt, wie man jQuery ins HTML einbindet.</p>
+        <div class="code">
+            <p>
+                <span class="grau">&lt;</span><span class="blau">head</span><span class="grau">&gt;</span>
+            </p>
+            <p class="code_padding">
+                <span class="grau">&lt;</span><span class="blau">script</span> <span class="hellblau">src</span>=<span
+                    class="orange">"http://code.jquery.com/jquery-3.3.1.min.js"</span><span
+                    class="grau">&gt;&lt;/</span><span class="blau">script</span><span class="grau">&gt;</span>
+            </p>
+            <p>
+                <span class="grau">&lt;/</span><span class="blau">head</span><span class="grau">&gt;</span>
+            </p>
+        </div>
+        <p>Wie ich oben im Beispiel gezeigt habe, sollte jQuery immer im Head eingebunden werden.</p>
+        <h3>Ereignisse</h3>
+        <p>Ereignisse brauchen Sie dann, wenn ein Besucher mit Ihrer Seite interagieren kann. Also wenn er zum Beispiel
+            auf einen Knopf drückt, soll ihm eine Meldung angezeigt werden, dass er auf den Knopf gedrückt hat. In
+            jQuery lassen sich diese sogenannten Events mit der ".on" Methode aufrufen z.B. $("h1").on("click",
+            function(){});. An der Stelle von "click" können zahlreiche Eventtypen stehen die wichtigsten von ihnen sind
+            blur, hover, focus und click. In folgendem Link sehen Sie eine Liste mit allen jQuery-Events:</p>
+        <p><a href="https://api.jquery.com/category/events/" target="_blank">Liste jQuery-Events</a></p>
+        <p>Jetzt zeige ich Ihnen noch, wie Sie einen Knopf erstellen können, der beim Klick ein Div verschwinden lässt:
+        </p>
+        <div id="event">Klick auf mich!</div>
+        <div id="verschwinden">Ich verschwinde</div>
+        <div class="code">
+            <p>
+                <span class="gelb">$</span>(<span class="orange">"#event"</span>).<span class="gelb">on</span>(<span
+                    class="orange">"click"</span>, <span class="blau">function</span>() {<p class="code_padding">
+                    <span class="gelb">$</span>(<span class="orange">"#verschwinden"</span>).<span
+                        class="gelb">toggle</span>();
+                </p>})
+            </p>
+        </div>
+        <h2 id="php">PHP</h2>
+        <p>PHP ist eine serverseitige Scriptsprache, das heißt, damit man PHP Programme bzw. die PHP-Scripts ausführen
+            kann, benötigt man einen Webserver, z.B. XAMPP. Um die Seite im Browser anzuschauen, muss im Webserver der
+            Apache- und MySQL-Dienst aktiviert werden.</p>
+        <img src="img/xampp.PNG" alt="xampp" />
+        <p>PHP wird hauptsächlich bei der Erstellung dynamischer Webseiten oder Webanwendungen eingesetzt. Mit ihrer
+            Hilfe können einzelne Funktionen in HTML-Code eingebettet werden. Wie sieht das genau aus? Hier ein
+            einfaches Beispiel für ein Skript in der Programmiersprache PHP:</p>
+        <div class="code">
+            <p>
+                <span class="blau">&lt;?php</span>
+            </p>
+            <p>
+                <span class="gelb">echo</span> <span class="orange">"&lt;h1&gt;Hallo&lt;/h1&gt;"</span>
+            </p>
+            <p>
+                <span class="blau">?&gt;</span>
+            </p>
+        </div>
+        <p>PHP-Codes werden serverseitig ausgeführt. Das bedeutet, dass aus dem PHP-Code auf dem Server HTML-Ausgaben
+            generiert und an den Client gesendet werden. Alles, was an den Server gerichtet ist, muss zwischen &lt;?php
+            und ?&gt;stehen. Benutzer können nur das Ergebnis sehen, nicht den von Ihnen ursprünglich programmierten
+            Code. Unser Beispielskript würde auf einem Webserver wie folgt aussehen:</p>
+        <h1 id="php_text">Hallo</h1>
+        <h3>Serverseitige Validierung</h3>
+        <p>Die Serverseitige Validierung ist eines der wichtigsten Themen, um seine Webseite / Server zu schützen. So
+            können zum SQL-Injections verhindert werden mit nur einer Zeile PHP-Code, welche so aussieht:</p>
+        <p><b>$<i>formularfeldName</i> = mysqli_real_escape_string($_REQUEST['<i>formularfeldName</i>']);</b> Diese
+            Funktion schliesst alle Strings aus, welche wie SQL-Befehle aussehen.</p>
+        <p>Um die Seite vor Cross Site Scripting (XSS) zu schützen, lautet der Befehl wie folgt:</p>
+        <p><b>$<i>formularfeldName</i> = htmlspecialchars($_REQUEST['<i>formularfeldName</i>']);</b></p>
+        <h3>jQuery VS. PHP</h3>
+        <table>
+            <tr>
+                <th>Thema</th>
+                <th>jQuery</th>
+                <th>PHP</th>
+            </tr>
+            <tr>
+                <td>Variablen</td>
+                <td>var <i>name</i> = '<i>wert</i>';</td>
+                <td>$<i>name</i> = '<i>wert</i>';</td>
+            </tr>
+            <tr>
+                <td>Variablen ausgegeben</td>
+                <td>document.write(<i>name</i>);</td>
+                <td>echo $<i>name</i></td>
+            </tr>
+            <tr>
+                <td>Arrays</td>
+                <td>var <i>name</i> = ['<i>wert</i>', '<i>wert</i>'];</td>
+                <td>$<i>name</i> = array('<i>wert</i>', '<i>wert</i>');</td>
+            </tr>
+            <tr>
+                <td>Else if Abfragen</td>
+                <td>else if (<i>Bedingung</i>)</td>
+                <td>elseif (<i>Bedingung</i>)</td>
+            </tr>
+        </table>
+        <h2 id="projektManagement">Projekt-Management</h2>
+        <p>Die beiden Projekt-Management-Methoden SCRUM und Kanban sind die zwei Hauptmethoden in der Programmierung.
+            Bei beiden Methoden werden alle Tätigkeiten für das Projekt auf Kärtchen geschrieben.</p>
+        <img src="img/scrum.PNG" alt="scrum" />
+        <h3>SCRUM</h3>
+        <ul>
+            <li>Scrum Teams arbeiten in Sprint-Serien, die normalerweise ca. 2 Wochen dauern.</li>
+            <li>Jeder Sprint startet mit einem Meeting, bei dem alle Tätigkeiten für das Projekt festgelegt werden.</li>
+            <li>Jeden Tag gibt es noch ein Meeting, um den aktuellen Stand zu besprechen. Diese dauern sehr kurz.</li>
+            <li>Zum Schluss gibt es noch ein Meeting um das Projekt revuepassierenzulassen.</li>
+        </ul>
+        <h3>Kanban</h3>
+        <ul>
+            <li>Kanban ist ein kontinuierlicher Prozess.</li>
+            <li>Tätigkeiten werden direkt vom Product Backlog "gepullt".</li>
+            <li>Jede Spalte hat eine strikte maximale Bearbeitungszeit.</li>
+            <li>Ab und zu werden neue Funktionen den Interessengruppen vorgestellt.</li>
+            <li>Auch hier gibt es zum Schluss gibt es noch ein Meeting um das Projekt revuepassierenzulassen.</li>
+        </ul>
+        <h3>Testprotokoll</h3>
+        <p>Wenn die Webseite fertiggestellt ist, sollte man Sie mit möglichst vielen Browsern und Geräten auf alle
+            Funktionen testen. Zum Glück gibt es HERMES, von dem man jegliche Vorlagen herunterladen kann, auch für ein
+            Testprotokoll:</p>
+        <p><a href="downloads/testprotokoll.docx">Download Testprotokoll</a></p>
+        <h2 id="glossar_title">Glossar</h2>
+        <table>
+            <tr>
+                <th>Begriff</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr>
+                <td>DOM</td>
+                <td>Document Object Model</td>
+            </tr>
+            <tr class="grey">
+                <td>Syntax</td>
+                <td>Regel für die Struktur eines Programmcodes</td>
+            </tr>
+            <tr>
+                <td>XSS</td>
+                <td>Cross Site Scripting</td>
+            </tr>
+            <tr class="grey">
+                <td>jQuery</td>
+                <td>JavaScript-Bibliothek</td>
+            </tr>
+            <tr>
+                <td>Loop</td>
+                <td>Schleife</td>
+            </tr>
+            <tr class="grey">
+                <td>Validierung</td>
+                <td>Überprüfung der Eingegebenen Werte in einem Formular</td>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>made by<br>Nino Tkalec</p>
+    </footer>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

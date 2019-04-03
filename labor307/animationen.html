@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animationen Blnet</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div id="titel">
+            <a href="../index.html"><img src="img/home.png" alt="home" id="home" /></a>
+            <h1>CSS: Animationen und Transitions</h1>
+        </div>
+        <nav>
+            <ol>
+                <li><a href="index.html">1. Home</a></li>
+                <li><a href="animationen.html">2. Animationen</a></li>
+                <li><a href="transitions.html">3. Transitions</a></li>
+                <li><a href="beispiele.html">4. Aufgaben</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <div class="textbox">
+            <h2>Videos</h2>
+            <p>Um zu verstehen, wie Animationen funktionen, solltest du dir am besten zuerst die Videos der Reihe nach
+                anschauen.</p>
+            <div id="videos">
+                <div class="vid">
+                    <h3>1.</h3>
+                    <video src="videos/CSS_Animation_Tutorial02.mp4" controls preload="auto"></video>
+                </div>
+                <div class="vid">
+                    <h3>2.</h3>
+                    <video src="videos/CSS_Animation_Tutorial05ANIMATION_FILL_MODE_Deutsch_German.mp4" controls
+                        preload="auto"></video>
+                </div>
+                <div class="vid">
+                    <h3>3.</h3>
+                    <video src="videos/CSS_Animation_Tutorial06ANIMATION_WIEDERHOLEN_Deutsch_German.mp4" controls
+                        preload="auto"></video>
+                </div>
+                <div class="vid">
+                    <h3>4.</h3>
+                    <video src="videos/CSS_Animation_Tutorial07ANIMATIONS_RICHTUNGEN_Deutsch_German.mp4" controls
+                        preload="auto"></video>
+                </div>
+                <div class="vid">
+                    <h3>5.</h3>
+                    <video src="videos/CSS_Animation_Tutorial08das_richtige_TIMING_Deutsch_German.mp4" controls
+                        preload="auto"></video>
+                </div>
+            </div>
+        </div>
+        <div class="zeile">
+            <div class="textbox left">
+                <h2>Benutze einfache Animationen ohne Javascript!</h2>
+                <p>CSS Animationen erlauben es dir, die meisten HTML Elemente einfach animieren zu können :)</p>
+                <div id="redbox"></div>
+                <p class="min768">Code dazu rechts ---></p>
+                <p class="max768">Code dazu unten</p>
+            </div>
+            <div class="textbox right">
+                <h3>Code</h3>
+                <p>[Selektor] {<br>
+                    width: 60px;<br>
+                    height: 60px;<br>
+                    animation-name: red_blue;<br>
+                    animation-duration: 3s;<br>
+                    animation-iteration-count: infinite;<br>
+                    }<br>
+                    @keyframes red_blue{<br>
+                    0% {background-color: red}<br>
+                    100% {background-color: blue}<br>
+                    }</p>
+            </div>
+        </div>
+        <div class="zeile">
+            <div class="textbox left">
+                <h2>Was sind CSS-Animationen?</h2>
+                <p>Eine Animation lässt ein Element schrittweise von einem Stil zum anderen wechseln. Es können beinahe
+                    alle CSS-Eigenschaften animiert werden. Um die CSS-Animation verwenden zu können, muss man zunächst
+                    einige
+                    Keyframes für die Animation angeben. Keyframes enthalten die Stile, die das Element zu bestimmten
+                    Zeiten haben wird. Wie oben beim Beispiel gezeigt, müssen keyframes gesetzt werden, damit sich
+                    schlussendlich ein Objekt bewegt. Als Angabe für die Keyframes benutzt man meistens %.</p>
+            </div>
+            <div class="textbox right">
+                <h3>Keyframe-Setzung</h3>
+                <p>@keyframes [animation-name] {<br>
+                    0% {transform: translateX(0)}<br>
+                    100% {transform: translateX(50px)}<br>
+                    }</p>
+            </div>
+        </div>
+        <div class="textbox" id="wie_animationen">
+            <h2>Wie werden Animationen erstellt?</h2>
+            <p>In den Folgenden Beispielen, erkläre ich, was ich genau gemacht habe um eine Animation zu erstellen.
+                Bei einer Animation kann vieles Verändert werden (grösse, dauer, farbe und form). Dabei ist es
+                wichtig, dass man wie folgt vor geht:<b> animation: text-focus-in 0.5s cubic-bezier(0.550,
+                    0.085,
+                    0.680, 0.530) 1s both;</b> Zur Erklärung, um eine Animation zu Starten benutzt man die
+                Eigenschaft
+                <b>animation:</b> danach kann man die Animation bennen, damit man weiss, um welche es sich später
+                handelt.
+                Natürlich muss man vorher noch einen Selektor wählen. In diesem Fall habe ich die Animation:
+                <b>text-focus-in</b> benannt. Danch kommt die Dauer einer Animation, in meinem Fall jetzt also
+                <b>0.5s</b>
+                jetzt
+                kommt einer der Wichtigsten Werte, nämlich die Animations Art. es gibt viele Verschiedene
+                Animationenarten, auf welche ich später noch mehr eingehen werde. In unserem Fall aber, haben wir
+                die Animation: <b>cubic-bezier</b> gewählt. jetzt kommt ein bisschen der Schwirigere Teil, nämlich
+                die
+                Werte der Animation selbst. in meinem Fall sind das jetzt die Werte: <b>(0.550, 0.085, 0.680,
+                    0.530)</b>
+                diese Sind schwierig zu erklären. Da alle Werte auf jede Animationsart verschieden reagieren,
+                deshalb werde ich im Späteren Verlauf noch darauf eingehen wie man Animationswerte einfach und
+                automatisch herausfinden kann. Kommen wir also noch zum letzten Punkt: die Verzögerungszeit. Diese
+                Beträgt in meinem Fall jetzt <b>1s</b>. Danach muss man nur noch Keyframes setzen, welche im
+                Verlauf mit
+                from/to oder noch besser in % angegeben werden.</p>
+        </div>
+        <div class="zeile">
+            <div class="textbox left">
+                <h2>Bewegung</h2>
+                <div id="movement">
+                    <p>CSS</p>
+                </div>
+                <p class="min768">Code dazu rechts ---></p>
+                <p class="max768">Code dazu unten</p>
+            </div>
+            <div class="textbox right">
+                <h3>Code</h3>
+                <p>[Selektor] {<br>
+                    width: 100px;<br>
+                    height: 50px;<br>
+                    display: flex;<br>
+                    justify-content: center;<br>
+                    align-items: center;<br>
+                    font-size: 40px;<br>
+                    background-color: red;<br>
+                    border-radius: 15px;<br>
+                    animation-name: specialanimation;<br>
+                    animation-duration: 6s;<br>
+                    animation-iteration-count: infinite;<br>
+                    }<br>
+                    @keyframes specialanimation {<br>
+                    0% {<br>
+                    transform: translateX(0) rotateZ(0)<br>
+                    }<br>
+                    50% {<br>
+                    transform: translateX(50vw) rotateZ(360deg)<br>
+                    }<br>
+                    100% {<br>
+                    transform: translateX(0) rotateZ(0)<br>
+                    }<br>
+                    }
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Erstellt am 29.1.</p>
+        <p>Animationen</p>
+        <p>Nino Tkalec, Colin Meier</p>
+    </footer>
+</body>
+
+</html>

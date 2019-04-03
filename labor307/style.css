@@ -38,9 +38,6 @@ h2 {
   color: white;
   text-shadow: 6px 6px 6px black;
 }
-main img {
-  height: 300px;
-}
 h3 {
   color: white;
   text-shadow: 6px 6px 6px black;
@@ -71,23 +68,24 @@ footer {
   padding: 5px;
   margin: auto 5px;
 }
-#photo-viewer {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
+#gross {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
-#photo-viewer.is-loading:after {
-  content: url(images/load.gif);
-  position: absolute;
-  top: 0;
-  right: 0;
+#gross img {
+  max-height: 400px;
 }
-#photo-viewer img {
-  max-width: 100%;
-  max-height: 100%;
-  top: 50%;
-  left: 50%;
+#klein {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10px;
 }
-a.active {
-  opacity: 0.3;
+#klein img {
+  height: 100px;
+  transition-duration: 1s;
+}
+#klein img:hover {
+  cursor: pointer;
 }

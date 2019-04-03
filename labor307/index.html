@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bildanzeige Blnet</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,11 +20,13 @@
         </div>
     </header>
     <main>
-        <div id="photo-viewer"></div>
-        <div id="thumbnails">
-            <a href="img/assassin's_creed.jpg" class="thumb active"><img src="img/assassin's_creed.jpg" alt="ac" /></a>
-            <a href="img/avatar.jpg" class="thumb"><img src="img/avatar.jpg" alt="avatar"></a>
-            <a href="img/game_of_thrones.jpg" class="thumb"><img src="img/game_of_thrones.jpg" alt="got"></a>
+        <div id="gross">
+            <img src="img/assassin's_creed.jpg" alt="ac" />
+        </div>
+        <div id="klein">
+            <img src="img/assassin's_creed.jpg" alt="ac" />
+            <img src="img/avatar.jpg" alt="avatar" />
+            <img src="img/game_of_thrones.jpg" alt="got" />
         </div>
     </main>
     <footer>
@@ -30,6 +34,7 @@
         <p>Bildanzeige</p>
         <p>Nino Tkalec</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

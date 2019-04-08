@@ -24,6 +24,10 @@ header {
   background-color: rgb(101,101,101);
   height: 100%;
 }
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+}
 h1 {
   color: white;
   font-size: 40px;
@@ -37,6 +41,9 @@ h1 {
 h2 {
   color: white;
   text-shadow: 6px 6px 6px black;
+  display: inline-block;
+  padding-right: 10%;
+  border-bottom: 5px solid;
 }
 h3 {
   color: white;

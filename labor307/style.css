@@ -92,6 +92,25 @@ footer {
 #klein img:first-child {
   opacity: 0.4;
 }
+.zeile {
+  display: flex;
+  justify-content: space-between;
+}
+.textbox {
+  background-color: rgb(101,101,101);
+  border-radius: 15px;
+  padding: 10px 30px;
+}
+.right {
+  width: 30%;
+  height: fit-content;
+}
+.left {
+  width: 60%;
+}
+iframe {
+  height: 1000px;
+}
 @keyframes scale-in-center {
   0% {
     transform: scale(0.8);
